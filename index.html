@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>css-components — Fady Ehab Amer</title>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--ink:#e6edf3;--muted:#8b949e;--accent:#58a6ff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.5}
+  .wrap{max-width:1000px;margin:0 auto;padding:48px 24px}
+  header{border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px}
+  h1{margin:0 0 6px;font-size:28px;font-family:ui-monospace,"SF Mono",Menlo,monospace;color:var(--accent)}
+  p.sub{margin:0;color:var(--muted);font-size:15px}
+  .count{display:inline-block;margin-top:10px;font-family:ui-monospace,monospace;font-size:12px;
+    color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .card{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+    background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13.5px;transition:border-color .15s,transform .15s}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+  footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--border);
+    color:var(--muted);font-size:13px}
+  a.home{color:var(--accent);text-decoration:none}
+</style></head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>css-components</h1>
+      <p class="sub">css-components — live demos</p>
+      <div class="count">63 live demos</div>
+    </header>
+    <div class="grid">
+    <a class="card" href="./3D-SwiperCarousel/"><span class="dot"></span>3D-SwiperCarousel</a>
+    <a class="card" href="./3D-cards/"><span class="dot"></span>3D-cards</a>
+    <a class="card" href="./3d-Navigation-Bar/"><span class="dot"></span>3d-Navigation-Bar</a>
+    <a class="card" href="./AOT-Accordion/"><span class="dot"></span>AOT-Accordion</a>
+    <a class="card" href="./Accordion-JS/"><span class="dot"></span>Accordion-JS</a>
+    <a class="card" href="./Animated-share-Button/"><span class="dot"></span>Animated-share-Button</a>
+    <a class="card" href="./Change-Navbar-onScroll/"><span class="dot"></span>Change-Navbar-onScroll</a>
+    <a class="card" href="./Circular-Navbar/"><span class="dot"></span>Circular-Navbar</a>
+    <a class="card" href="./Custom-Bootstrap4-Carousel/"><span class="dot"></span>Custom-Bootstrap4-Carousel</a>
+    <a class="card" href="./Custom-Range-Slider/"><span class="dot"></span>Custom-Range-Slider</a>
+    <a class="card" href="./CustomerReview-Carousel/"><span class="dot"></span>CustomerReview-Carousel</a>
+    <a class="card" href="./Customized-RadioButtons/"><span class="dot"></span>Customized-RadioButtons</a>
+    <a class="card" href="./Disable-rightClick/"><span class="dot"></span>Disable-rightClick</a>
+    <a class="card" href="./Donate-Card/"><span class="dot"></span>Donate-Card</a>
+    <a class="card" href="./Drop-Down-Menu/"><span class="dot"></span>Drop-Down-Menu</a>
+    <a class="card" href="./FaceBook-Loginpage/"><span class="dot"></span>FaceBook-Loginpage</a>
+    <a class="card" href="./Fancy-ProfileCard/"><span class="dot"></span>Fancy-ProfileCard</a>
+    <a class="card" href="./FireWorksEffect-Jquery/"><span class="dot"></span>FireWorksEffect-Jquery</a>
+    <a class="card" href="./Firebase-Authentication/"><span class="dot"></span>Firebase-Authentication</a>
+    <a class="card" href="./FlipCard-Animation/"><span class="dot"></span>FlipCard-Animation</a>
+    <a class="card" href="./FloatingAction-Button/"><span class="dot"></span>FloatingAction-Button</a>
+    <a class="card" href="./FullScreen-Carousel/"><span class="dot"></span>FullScreen-Carousel</a>
+    <a class="card" href="./Furniture-TransformCards/"><span class="dot"></span>Furniture-TransformCards</a>
+    <a class="card" href="./Gallery-Grid-Layouts/"><span class="dot"></span>Gallery-Grid-Layouts</a>
+    <a class="card" href="./Gallery-app/"><span class="dot"></span>Gallery-app</a>
+    <a class="card" href="./Gallery-filltering/"><span class="dot"></span>Gallery-filltering</a>
+    <a class="card" href="./Gradient-Animated-Button/"><span class="dot"></span>Gradient-Animated-Button</a>
+    <a class="card" href="./Gradient-LoginForm/"><span class="dot"></span>Gradient-LoginForm</a>
+    <a class="card" href="./HTML-Native-Accordion/"><span class="dot"></span>HTML-Native-Accordion</a>
+    <a class="card" href="./HamburgerMenu/"><span class="dot"></span>HamburgerMenu</a>
+    <a class="card" href="./Hoverable-Table/"><span class="dot"></span>Hoverable-Table</a>
+    <a class="card" href="./ImpossipleButtons/"><span class="dot"></span>ImpossipleButtons</a>
+    <a class="card" href="./Interactive-CSS-Menu/"><span class="dot"></span>Interactive-CSS-Menu</a>
+    <a class="card" href="./Interactive-RadioButtons/"><span class="dot"></span>Interactive-RadioButtons</a>
+    <a class="card" href="./JS-Material-PricingComponent/"><span class="dot"></span>JS-Material-PricingComponent</a>
+    <a class="card" href="./JS-Slider/"><span class="dot"></span>JS-Slider</a>
+    <a class="card" href="./JS-Tabs/"><span class="dot"></span>JS-Tabs</a>
+    <a class="card" href="./Javascript-Card-Animation/"><span class="dot"></span>Javascript-Card-Animation</a>
+    <a class="card" href="./Login-Signup-Forms/"><span class="dot"></span>Login-Signup-Forms</a>
+    <a class="card" href="./Marvel-superheroes-slider/"><span class="dot"></span>Marvel-superheroes-slider</a>
+    <a class="card" href="./Mega-Menu/"><span class="dot"></span>Mega-Menu</a>
+    <a class="card" href="./Menu-usecases/"><span class="dot"></span>Menu-usecases</a>
+    <a class="card" href="./Mobile-Style-NavigationBar/"><span class="dot"></span>Mobile-Style-NavigationBar</a>
+    <a class="card" href="./MobileScreens-Slider/"><span class="dot"></span>MobileScreens-Slider</a>
+    <a class="card" href="./NIKE-ProductCard/"><span class="dot"></span>NIKE-ProductCard</a>
+    <a class="card" href="./Navbar-UseCases/"><span class="dot"></span>Navbar-UseCases</a>
+    <a class="card" href="./Notched-NavBar/"><span class="dot"></span>Notched-NavBar</a>
+    <a class="card" href="./Owl-Carousel/"><span class="dot"></span>Owl-Carousel</a>
+    <a class="card" href="./Pop-Up-Menu/"><span class="dot"></span>Pop-Up-Menu</a>
+    <a class="card" href="./Popup-ImagesGallery-JS/"><span class="dot"></span>Popup-ImagesGallery-JS</a>
+    <a class="card" href="./PopupMessage-javaScript/"><span class="dot"></span>PopupMessage-javaScript</a>
+    <a class="card" href="./PricingCards-LVL1-CatReloaded/"><span class="dot"></span>PricingCards-LVL1-CatReloaded</a>
+    <a class="card" href="./RTL-Navigation-bar/"><span class="dot"></span>RTL-Navigation-bar</a>
+    <a class="card" href="./Random.inc-Form/"><span class="dot"></span>Random.inc-Form</a>
+    <a class="card" href="./SVGs-LoginPage/"><span class="dot"></span>SVGs-LoginPage</a>
+    <a class="card" href="./Shopee-Ecommerce-Website/"><span class="dot"></span>Shopee-Ecommerce-Website</a>
+    <a class="card" href="./SlideOut-CardAnimation/"><span class="dot"></span>SlideOut-CardAnimation</a>
+    <a class="card" href="./SocialCard-HoverAnimation/"><span class="dot"></span>SocialCard-HoverAnimation</a>
+    <a class="card" href="./Tilt-Card-Effect/"><span class="dot"></span>Tilt-Card-Effect</a>
+    <a class="card" href="./Tooltip-box/"><span class="dot"></span>Tooltip-box</a>
+    <a class="card" href="./Transparent-LoginPage/"><span class="dot"></span>Transparent-LoginPage</a>
+    <a class="card" href="./VariableHeight-onHoverCards/"><span class="dot"></span>VariableHeight-onHoverCards</a>
+    <a class="card" href="./neumorphism-Login-page/"><span class="dot"></span>neumorphism-Login-page</a>
+    </div>
+    <footer>
+      Part of <a class="home" href="https://github.com/fadyehabamer">@fadyehabamer</a>'s curated collections ·
+      <a class="home" href="https://github.com/fadyehabamer/css-components">source</a>
+    </footer>
+  </div>
+</body></html>
