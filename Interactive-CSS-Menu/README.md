@@ -1,21 +1,11 @@
-# Interactive navbar 
-## open & close menu using pure CSS
+# Interactive-CSS-Menu
 
-```html
-<!-- For making button toggle -->
+open & close menu using pure CSS
 
-<input type="checkbox" id="menu">
-```
+### 🔗 [View Live Demo](https://fadyehabamer.github.io/css-components/Interactive-CSS-Menu/)
 
-```css
-/*Click CSS*/
+**Built with:** CSS
+**Topics:** `css`, `menu`
 
-#menu::checked {
-
-/* all effects here */
-
-}
-```
-<p align="center">
-  <img src="gif.gif">
-</p>
+---
+↩ Part of the [**css-components**](../) collection · [all collections](https://github.com/fadyehabamer?tab=repositories) · [@fadyehabamer](https://github.com/fadyehabamer)

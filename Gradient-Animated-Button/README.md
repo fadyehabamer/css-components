@@ -1,8 +1,11 @@
-# Animated Gradient Button
+# Gradient-Animated-Button
 
-```css
-.btn-gradient:hover{
-    background-position: right center;
-    box-shadow:0 15px 10px #00000044;
-}
-```
+animated gradient css3 button
+
+### 🔗 [View Live Demo](https://fadyehabamer.github.io/css-components/Gradient-Animated-Button/)
+
+**Built with:** CSS
+**Topics:** `html5`, `css3-animations`
+
+---
+↩ Part of the [**css-components**](../) collection · [all collections](https://github.com/fadyehabamer?tab=repositories) · [@fadyehabamer](https://github.com/fadyehabamer)

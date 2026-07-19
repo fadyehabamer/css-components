@@ -1,12 +1,11 @@
-# Cool Circular Navbar 
-> Circular fill effect when ***clicked*** using
-- HTML
+# Circular-Navbar
 
-- CSS
-  - transition
-  - clip-path
+Cool Circular Navigation menu
 
-- JS
-  - Add click function
-  - change some styling
-  - Html in Javascript 
+### 🔗 [View Live Demo](https://fadyehabamer.github.io/css-components/Circular-Navbar/)
+
+**Built with:** CSS
+**Topics:** `css3`, `clippath`, `transition`, `javascript`
+
+---
+↩ Part of the [**css-components**](../) collection · [all collections](https://github.com/fadyehabamer?tab=repositories) · [@fadyehabamer](https://github.com/fadyehabamer)
