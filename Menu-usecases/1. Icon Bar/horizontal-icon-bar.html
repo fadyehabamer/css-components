@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!---Title of Website-->
+	<title>Horizontal Icon Bar</title>					
+	<meta charset="utf-8">
+
+	<!---To ensure proper rendering and touch zooming in Mobile Phones-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+
+	<!---For Font-Aswesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		.icon-bar {
+			width: 100%; 			/* Set a specific width */
+			background-color: #555; /* Dark-grey background */
+			overflow: auto;			/* Overflow due to float */
+		}
+
+		.icon-bar a {
+			float: left; 		/* Float links side by side */
+			text-align: center; /* Center-align text */
+			width: 12.5%; 		/* Equal width (12.5 width x 8 icons = 100% width) */
+			padding: 12px 0; 	/* Some top and bottom padding */
+			transition: all 0.3s ease; /* Add transition for hover effects */
+			color: white; 		/* White text color */
+			font-size: 36px; 	/* Increased font size */
+		}
+
+		.icon-bar a:hover {
+			background-color: #000; /* Add a hover color */
+		}
+
+		.active {
+			background-color: #FF5733; /* Add an active/current color */
+		}
+
+		.container{
+			padding: 25px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="icon-bar">
+			<a class="active" href="#"><i class="fa fa-home"></i></a> 
+			<a href="#"><i class="fa fa-search"></i></a> 
+			<a href="#"><i class="fa fa-envelope"></i></a>
+			<a href="#"><i class="fa fa-map"></i></a>
+			<a href="#"><i class="fa fa-calendar"></i></a>
+			<a href="#"><i class="fa fa-address-book"></i></a>
+			<a href="#"><i class="fa fa-globe"></i></a>
+			<a href="#"><i class="fa fa-trash"></i></a> 
+		</div>
+	</div>
+</body>
+</html>

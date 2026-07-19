@@ -1,0 +1,45 @@
+img{
+    width:640px;
+    height: 320px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.accordion{
+    width: 800px;
+    margin:50px auto;
+    height: 360px;
+}
+.accordion li{
+    width: 160px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    display: block;
+    transition: all 0.5s;
+}
+.title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 640px;
+
+}
+.title a{
+    display: block;
+    color: white;
+    font-size: 18;
+    padding: 20px;
+    text-decoration: none;
+
+}
+.accordion ul:hover li{
+    width:40px;
+}
+.accordion ul li:hover{
+    width: 640px;
+}

@@ -1,0 +1,29 @@
+body {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif
+}
+p{
+  font-weight: 700;
+  font-style: italic;
+}
+button {
+  display: block;
+  margin: 20px auto;
+  background-color: #9b59b6;
+  border: 0;
+  border-bottom: 3px solid #8e44ad;
+  border-radius: 3px;
+  padding: 1em 2em;
+  color: #fff;
+  cursor: pointer;
+}
+input{
+  padding: 1em 2em;
+}

@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(72, 115, 195);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    background-color: rgb(255, 246, 246);
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: cornflowerblue;
+    color: white;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    transition: height 0.5s ease, background-color 0.5s ease;
+    top: 0;
+}
+
+.logo {
+    font-size: 30px;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    padding-right: 14px;
+    font-size: 19px;
+    cursor: pointer;
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    height: auto;
+    padding: 40px ;
+    margin:80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section:nth-of-type(1) {
+    background-color: teal;
+}
+
+section:nth-of-type(2) {
+    background-color: dodgerblue;
+}
+
+section:nth-of-type(3) {
+    background-color: lightcoral;
+}
+
+section:nth-of-type(4) {
+    background-color: palegreen;
+}
+
+section:nth-of-type(5) {
+    background-color: slateblue;
+    margin-bottom: 200px;
+}
+
+@media (max-width:500px) {
+    ul{
+        display: none;
+    }
+    main{
+        width: 100%;
+        margin: 0;
+    }
+}

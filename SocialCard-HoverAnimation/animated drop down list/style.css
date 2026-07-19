@@ -1,0 +1,86 @@
+.container {
+  width: 250px;
+  height: 50px;
+  
+  margin: 10px;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.container .box {
+    z-index: 2;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+}
+.container a{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    background-color: #333;
+    color: #fff;
+    width:100%;
+    text-decoration: none;
+    position: relative;
+    top:-50px;
+    z-index: 1;
+}
+.container:hover a{
+    top:0;
+}
+
+.normal::before{
+    display: block;
+    padding: 10px;
+    margin-bottom:10px ;
+    content: "normal hover";
+}
+.normal .box {
+  
+  background-color: #62c8f8;
+}
+
+
+.transition::before{
+    display: block;
+    padding: 10px;
+    margin-bottom:10px ;
+    content: "transition hover";
+}
+.transition .box {
+ 
+  background-color: #3b5998;
+}
+.transition a{
+    transition: all .5s ease-in-out;
+}
+
+
+.animation::before{
+    display: block;
+    padding: 10px;
+    margin-bottom:10px ;
+    content: "animation  hover";
+}
+.animation .box {
+  background-color: #5f2782;
+}
+.animation a{
+    transition: all .5s ease-in-out;
+}
+.animation:hover a {
+    transform-origin: top;
+    animation: swing 1.5s ease-in-out;
+}
+@keyframes swing{
+    0%{transform:rotatex(-50deg) ;}
+    20%{transform:rotatex(50deg) ;}
+    40%{transform:rotatex(-30deg) ;}
+    60%{transform:rotatex(30deg) ;}
+    80%{transform:rotatex(-30deg) ;}
+    100%{transform:rotatex(0deg) ;}
+}

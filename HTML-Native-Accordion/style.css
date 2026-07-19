@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: rgb(231, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: width 0.5s ease-in-out;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 0 20px;
+    width: 500px;
+    text-align: left;
+
+}
+
+details>summary {
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+details {
+    text-align: left;
+}
+
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+details>summary::before {
+    content: '▶️';
+}
+
+details[open]>summary::before {
+    content: '🔽';
+}
+
+p {
+    padding: 10px 5px;
+    font-style: italic;
+}
+
+details[open] summary~* {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        margin-left: -10px
+    }
+
+    100% {
+        opacity: 1;
+        margin-left: 0px
+    }
+}

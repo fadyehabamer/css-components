@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f6816dd194.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <input type="checkbox" id="btn">
+            <a href="#">MENU</a>
+            <a href="#">PRODUCTS</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>     
+        </div>
+    </div>
+    <script>
+        const btn = document.querySelector("#btn");
+        const header = document.querySelector(".header");
+        btn.addEventListener("click",()=>{
+            var htop = header.computedStyleMap().get('top').value;
+            console.log(htop);
+            if(htop == "-140"){
+                header.style.top = "0px";
+            }else{
+                header.style.top = "-140px";
+            }
+        });
+    </script>
+</body>
+</html>

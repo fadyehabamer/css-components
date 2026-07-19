@@ -1,0 +1,157 @@
+/*Template Name-Cizzu*/
+/*Author Name-skbhoi*/
+/*Version-1.1*/
+/*Date of Creation-9-june-2020*/
+/*---------------------------
+[TABLE OF CONTENT]
+1.TYPOGRAPHY
+2.BACKGROUND IMAGE
+3.FORM SECTION
+4.RESET PASSWORD
+5.SOCIAL ICON
+6.SOCIAL ICON HOVER
+------------------------*/
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+/* --------------------------------------
+1. TYPOGRAPHY
+-------------------------------------- */
+h1{
+color:#f5eded;
+font-family: 'PT Serif', serif;
+}
+h4{
+font-weight: bold;
+color: #f5eded;
+font-family: 'PT Serif', serif;
+}
+p{
+font-family: 'PT Serif', serif;
+}
+/* --------------------------------------
+2. BACKGROUND IMAGE
+-------------------------------------- */
+.image-container{
+background: url('../image/bg1.png') center no-repeat;/*(change background image here)*/
+background-size: cover;
+height: 100vh;
+}
+/* --------------------------------------
+3. FORM SECTION
+-------------------------------------- */
+.form-container{
+background:#000;
+display: flex;
+justify-content: center;
+}
+.form-box{
+display: flex;
+flex-direction: column;
+justify-content: center;
+min-height: 100vh;
+}
+.form-box .form-input {
+position: relative;
+}
+.form-box .form-input input{
+width: 100%;
+height: 40px;
+margin-bottom: 20px;
+border: none;
+border-radius: 5px;
+outline: none;
+background: white;
+padding-left: 45px;
+}
+.form-box .form-input span{
+position: absolute;
+top: 8px;
+padding-left: 20px;
+color: #777;
+}
+.form-box .form-input input::placeholder{
+padding-left: 0px;
+}
+.form-box .form-input input:focus,
+.form-box .form-input input:valid{
+border-bottom: 2px solid #dc3545;
+}
+.form-box input[type="checkbox"]:not(:checked) + label:before{
+background: transparent;
+border: 2px solid #aaa69d;
+width: 15px;
+height: 15px;
+}
+.form-box .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
+background-color: #dc3545;
+border: 0px;
+}
+.form-box button[type="submit"]{
+border: none;
+cursor: pointer;
+width: 150px;
+height: 40px;
+border-radius: 5px;
+background-color: #fff;
+color: #000;
+font-weight: bold;
+transition: 0.5s;
+}
+.form-box button[type="submit"]:hover{
+-webkit-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+}
+/* --------------------------------------
+4.RESET PASSWORD
+-------------------------------------- */
+.forget-link, .register-link, .login-link{
+color: #fff;
+font-weight: bold;
+}
+.forget-link:hover, .register-link:hover, .login-link:hover{
+color: #292525;
+}
+/* --------------------------------------
+5.SOCIAL ICON
+-------------------------------------- */
+.form-box .btn-social{
+color: #fff;
+border: 0;
+margin-bottom: 10px;
+border-radius: 50%;
+}
+.form-box .btn-facebook{
+background: #4866a8;
+}
+.form-box .btn-google{
+background: #da3f34;
+}
+.form-box .btn-twitter{
+background: #33ccff;
+}
+.form-box .btn-insta{
+background:  #833AB4;
+}
+/* --------------------------------------
+6.SOCIAL ICON HOVER
+-------------------------------------- */
+.form-box .btn-facebook:hover{
+color: #fff;
+background: #3d5785;
+}
+.form-box .btn-google:hover{
+background: #bf3b31;
+color: #fff;
+}
+.form-box .btn-twitter:hover{
+background: #2eb7e5;
+color: #fff;
+}
+.form-box .btn-insta:hover{
+background: #2eb7e5;
+color: #fff;
+}

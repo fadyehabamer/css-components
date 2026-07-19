@@ -1,0 +1,86 @@
+.form-box {
+    border: 0.5px solid lightgrey;
+    width: 500px;
+    height: 1000px;
+    margin-top: 120px;
+    margin-left: 120px;
+    border-radius: 20px;
+    box-shadow: 0px 7px 5px -6px rgba(0,0,0,0.75);
+}
+
+.blob {
+    width: 500px;
+    margin-top: 40px;
+    position: relative;
+    margin-top: -50px;
+
+}
+
+.wave {
+    border-radius: 20px;
+    margin-top: -4px;
+}
+
+.img {
+    position: relative;
+    width: 200px;
+    top: -370px;
+    margin-left: 120px;
+}
+
+.form { 
+    width: 400px;
+    height: 270px;
+    margin-top: -240px;
+    margin-left: 40px;
+}
+
+.txt {
+    width: 240px;
+    border: none;
+    background-color: #bae5e5;
+    padding: 12px;
+    border-radius: 20px;
+    margin-left: 90px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    
+}
+
+.pswd {
+    margin-top: 20px;
+    width: 240px;
+    border: none;
+    background-color: #bae5e5;
+    padding: 12px;
+    border-radius: 20px;
+    margin-left: 90px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: 30px;
+    width: 220px;
+    border: none;
+    background-color: #0693E3;
+    padding: 12px;
+    border-radius: 20px;
+    margin-left: 110px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.par {
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+    color: #0693E3;
+    font-weight: normal;
+}
+
+.wave1 {
+    border-radius: 20px;
+    margin-top: 5px;
+}

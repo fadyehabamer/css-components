@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HowToCreate Series | Menu | Tabs</title>
+	<meta charset="utf-8">
+
+	<!-- To ensure proper rendering and touch zooming in Mobile Phones -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		/* Style the tab */
+		.tab {
+		    overflow: hidden;
+		    border: 1px solid #8fb7a5;
+		    background-color: #8fb7a5;
+		}
+
+		/* Style the buttons that are used to open the tab content */
+		.tab button {
+		    background-color: inherit;
+		    float: left;
+		    border: none;
+		    outline: none;
+		    cursor: pointer;
+		    padding: 14px 16px;
+		    transition: 0.3s;
+		    color: white;
+		    font: 600 16px Lato, sans-serif;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+		    background-color: #61977e;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+		    background-color: #426756;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+		    display: none;
+		    padding: 6px 12px;
+		    border: 1px solid #426756;
+		    border-top: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- Tab links -->
+	<div class="tab">
+	<button class="tablinks" onclick="openCity(event, 'Hyderabad')">Hyderabad</button>
+	<button class="tablinks" onclick="openCity(event, 'Mumbai')">Mumbai</button>
+	<button class="tablinks" onclick="openCity(event, 'Lucknow')">Lucknow</button>
+	</div>
+
+	<!-- Tab content -->
+	<div id="Hyderabad" class="tabcontent">
+	<h3>Hyderabad</h3>
+	<p>Hyderabad is the capital of Telangana, India.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+	</div>
+
+	<div id="Mumbai" class="tabcontent">
+	<h3>Mumbai</h3>
+	<p>Mumbai is the capital of Maharashtra, India.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+	</div>
+
+	<div id="Lucknow" class="tabcontent">
+	<h3>Lucknow</h3>
+	<p>Lucknow is the capital of Uttar Pradesh, India.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+	</div>
+
+	<script type="text/javascript">
+		function openCity(evt, cityName) {
+		    // Declare all variables
+		    var i, tabcontent, tablinks;
+
+		    // Get all elements with class="tabcontent" and hide them
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+
+		    // Get all elements with class="tablinks" and remove the class "active"
+		    tablinks = document.getElementsByClassName("tablinks");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		    }
+
+		    // Show the current tab, and add an "active" class to the button that opened the tab
+		    document.getElementById(cityName).style.display = "block";
+		    evt.currentTarget.className += " active";
+		}
+	</script>
+</body>
+</html>

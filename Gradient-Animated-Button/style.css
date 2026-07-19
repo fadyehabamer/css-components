@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    background-color: #ddd;
+}
+.container{
+    height:100vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-gradient{
+    border:0;
+    box-shadow:0 5px 10px #00000044;
+    padding: 20px 40px;
+    border-radius:5px;
+    background-image:
+    linear-gradient(to right,blue,skyblue,blue);
+    background-size: 200% auto;
+    cursor: pointer;
+    color:white;
+    text-transform:uppercase;
+    transition:200ms;
+}
+
+.btn-gradient:hover{
+    background-position: right center;
+    box-shadow:0 15px 10px #00000044;
+}
