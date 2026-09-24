@@ -179,6 +179,10 @@ body {
   animation: countdown var(--duration, 5s) linear forwards;
 }
 
+.toast.is-paused .toast-progress {
+  animation-play-state: paused;
+}
+
 [dir="rtl"] .toast-progress {
   transform-origin: right;
 }

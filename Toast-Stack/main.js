@@ -19,6 +19,23 @@ function removeToast(toast) {
   }
 }
 
+function startTimer(toast) {
+  toast.startedAt = performance.now();
+  toast.timer = setTimeout(() => removeToast(toast), toast.remaining);
+}
+
+function updatePause(toast) {
+  const shouldPause = toast.hovered || toast.focused;
+  if (shouldPause === toast.classList.contains('is-paused')) return;
+  toast.classList.toggle('is-paused', shouldPause);
+  if (shouldPause) {
+    clearTimeout(toast.timer);
+    toast.remaining -= performance.now() - toast.startedAt;
+  } else {
+    startTimer(toast);
+  }
+}
+
 function showToast(type, options = {}) {
   const preset = presets[type] || presets.info;
   const toast = document.createElement('li');
@@ -56,7 +73,26 @@ function showToast(type, options = {}) {
   toast.append(icon, body, close, progress);
   stack.append(toast);
 
-  toast.timer = setTimeout(() => removeToast(toast), duration);
+  toast.remaining = duration;
+  startTimer(toast);
+
+  toast.addEventListener('mouseenter', () => {
+    toast.hovered = true;
+    updatePause(toast);
+  });
+  toast.addEventListener('mouseleave', () => {
+    toast.hovered = false;
+    updatePause(toast);
+  });
+  toast.addEventListener('focusin', () => {
+    toast.focused = true;
+    updatePause(toast);
+  });
+  toast.addEventListener('focusout', (event) => {
+    if (toast.contains(event.relatedTarget)) return;
+    toast.focused = false;
+    updatePause(toast);
+  });
   return toast;
 }
 
