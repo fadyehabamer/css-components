@@ -6,6 +6,8 @@ const openButton = document.querySelector('.open-palette');
 const closeButton = palette.querySelector('.palette-close');
 const backdrop = palette.querySelector('.palette-backdrop');
 const lastRun = document.querySelector('.last-run');
+const page = document.querySelector('.page');
+const panel = palette.querySelector('.palette-panel');
 
 const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 let returnFocus = null;
@@ -146,6 +148,7 @@ function openPalette() {
   input.value = '';
   render(filter(''));
   palette.hidden = false;
+  page.inert = true;
   document.body.style.overflow = 'hidden';
   input.focus();
 }
@@ -153,6 +156,7 @@ function openPalette() {
 function closePalette() {
   if (palette.hidden) return;
   palette.hidden = true;
+  page.inert = false;
   document.body.style.overflow = '';
   if (returnFocus && returnFocus.focus) returnFocus.focus();
 }
@@ -188,6 +192,29 @@ list.addEventListener('click', (event) => {
   if (!option) return;
   setActive(Number(option.dataset.index));
   runActive();
+});
+
+function focusables() {
+  return [...panel.querySelectorAll('input, button, [href], [tabindex]:not([tabindex="-1"])')]
+    .filter((el) => !el.disabled && !el.closest('[hidden]'));
+}
+
+panel.addEventListener('keydown', (event) => {
+  if (event.key !== 'Tab') return;
+  const items = focusables();
+  const first = items[0];
+  const last = items[items.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
+
+document.addEventListener('focusin', (event) => {
+  if (!palette.hidden && !panel.contains(event.target)) input.focus();
 });
 
 openButton.querySelector('.shortcut').textContent = isMac ? '⌘ K' : 'Ctrl K';
