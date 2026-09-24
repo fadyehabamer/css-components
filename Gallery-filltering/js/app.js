@@ -17,4 +17,11 @@ for (let i = 0 ; i < filterBtn.length ; i++){
             }
         }
     });
+    // keyboard access: activate filter with Enter / Space
+    filterBtn[i].addEventListener('keydown' , function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+        }
+    });
 }

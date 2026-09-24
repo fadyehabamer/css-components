@@ -4,8 +4,18 @@ body {
     margin: 0;
 }
 
+/* visually hidden but still focusable, so the menu can be toggled with the keyboard */
 input#menu {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+input#menu:focus-visible + label.icon {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
 }
 
 .icon {

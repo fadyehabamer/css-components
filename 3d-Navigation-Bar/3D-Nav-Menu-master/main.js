@@ -1,7 +1,17 @@
-selector(s: ".menu").addEventListener('click', function() {
-    this.classList.toggle(token: 'open');
-    selector(s: 'header').classList.toggle(token: 'open');
-    selector(s: '.overlay').classList.toggle(token: 'open');
+function toggleMenu() {
+    const menu = selector('.menu');
+    menu.classList.toggle('open');
+    selector('header').classList.toggle('open');
+    selector('.overlay').classList.toggle('open');
+    menu.setAttribute('aria-expanded', menu.classList.contains('open'));
+}
+
+selector('.menu').addEventListener('click', toggleMenu);
+selector('.menu').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+    }
 });
 
 function selector(s) {

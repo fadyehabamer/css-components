@@ -29,7 +29,8 @@
     top:-50px;
     z-index: 1;
 }
-.container:hover a{
+.container:hover a,
+.container:focus-within a{
     top:0;
 }
 

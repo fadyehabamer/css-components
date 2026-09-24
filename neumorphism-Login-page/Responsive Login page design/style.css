@@ -1,17 +1,17 @@
 /**-------- Fontstyle/Font name -----------**/
 @font-face {
     font-family: Poppins-Regular;
-    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+    src: url('fonts/poppins/Poppins-Regular.ttf'); 
   }
   
   @font-face {
     font-family: Poppins-Bold;
-    src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+    src: url('fonts/poppins/Poppins-Bold.ttf'); 
   }
   
   @font-face {
     font-family: Poppins-Medium;
-    src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+    src: url('fonts/poppins/Poppins-Medium.ttf'); 
   }
   
 *
@@ -71,6 +71,13 @@ button
     outline: none !important;
     border: none;
     background: transparent;
+}
+/* keyboard focus indicator (outline is removed on links and buttons above) */
+a:focus-visible,
+button:focus-visible
+{
+    outline: 2px solid rgb(120, 120, 255) !important;
+    outline-offset: 2px;
 }
 
 button:hover

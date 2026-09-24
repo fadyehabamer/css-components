@@ -77,6 +77,12 @@ button {
   background-color: transparent;
 }
 
+/* keyboard focus indicator (outline is removed above) */
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
 /*----------  REVIEWS CAROUSEL  ----------*/
 .body {
   height: 100vh;

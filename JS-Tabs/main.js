@@ -20,4 +20,11 @@ arrTabs.forEach(ele => {
         //    console.log(e.currentTarget.dataset.cont)
         document.querySelector(e.currentTarget.dataset.cont).style.display = 'block'
     })
+    // keyboard access: activate tab with Enter / Space
+    ele.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault()
+            ele.click()
+        }
+    })
 })

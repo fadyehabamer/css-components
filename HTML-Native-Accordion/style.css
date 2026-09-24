@@ -5,6 +5,12 @@
     outline: none;
 }
 
+/* keyboard focus indicator (outline is removed globally above) */
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
 body {
     background-color: rgb(231, 228, 228);
     display: flex;

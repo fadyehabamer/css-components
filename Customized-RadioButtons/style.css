@@ -33,6 +33,12 @@ input[type=radio]:focus {
     outline-color: transparent;
 }
 
+/* keyboard focus indicator */
+input[type=radio]:focus-visible {
+    outline: 2px solid #f0ebeb;
+    outline-offset: 2px;
+}
+
 .container {
     width: 550px;
     border: 1px solid rgb(180, 180, 180);

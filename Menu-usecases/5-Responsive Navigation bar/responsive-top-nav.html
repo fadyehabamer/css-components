@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>HowToCreate Series | Menu | Responsive Navigation Bar</title>
 
 	<!-- To ensure proper rendering and touch zooming in Mobile Phones -->
@@ -90,12 +91,12 @@
 <body>
 
 	<div class="topnavbar" id="myTopNavBar">
-		<a href="#"><img class="logo" src="logo.png"></a>
+		<a href="#"><img class="logo" src="logo.png" alt="Logo"></a>
 		<a href="#" class="active">Home</a>					<!-- # internal target locatio -->
 		<a href="#">News</a>
 		<a href="#">Contact</a>	
 		<a href="#">About</a>
-		<a href="#" class="icon" onclick="displayMenu()">&#9776;</a>
+		<a href="#" class="icon" onclick="displayMenu()" aria-label="Menu">&#9776;</a>
 	</div>
 
 	<script>

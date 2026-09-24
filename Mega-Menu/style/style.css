@@ -145,7 +145,8 @@ nav .links li.active a {
   top: -6px;
 }
 
-.menu:hover .sub-menu {
+.menu:hover .sub-menu,
+.menu:focus-within .sub-menu {
   display: block;
 }
 

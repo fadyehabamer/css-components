@@ -41,7 +41,7 @@
 	</style>
 </head>
 <body>
-	<div class="container" onclick="myAnimation(this)">
+	<div class="container" onclick="myAnimation(this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); myAnimation(this); }" role="button" tabindex="0" aria-label="Toggle menu">
 		<div class="bar1"></div>
 		<div class="bar2"></div>
 		<div class="bar3"></div>
