@@ -34,9 +34,61 @@ function changeFontSize(step) {
   document.documentElement.style.fontSize = next + 'px';
 }
 
-function render(items) {
+function fuzzyMatch(query, text) {
+  const q = query.toLowerCase().replace(/\s+/g, '');
+  const t = text.toLowerCase();
+  if (!q) return { score: 0, positions: [] };
+
+  const positions = [];
+  let score = 0;
+  let from = 0;
+  let previous = -2;
+
+  for (const char of q) {
+    const found = t.indexOf(char, from);
+    if (found === -1) return null;
+    positions.push(found);
+    score += 1;
+    if (found === previous + 1) score += 3;
+    if (found === 0 || t[found - 1] === ' ') score += 2;
+    score -= (found - from) * 0.1;
+    previous = found;
+    from = found + 1;
+  }
+
+  return { score, positions };
+}
+
+function highlight(text, positions) {
+  const fragment = document.createDocumentFragment();
+  let i = 0;
+  while (i < text.length) {
+    const marked = positions.includes(i);
+    let j = i;
+    while (j < text.length && positions.includes(j) === marked) j++;
+    const chunk = text.slice(i, j);
+    if (marked) {
+      const mark = document.createElement('mark');
+      mark.textContent = chunk;
+      fragment.append(mark);
+    } else {
+      fragment.append(chunk);
+    }
+    i = j;
+  }
+  return fragment;
+}
+
+function filter(query) {
+  return commands
+    .map((command, order) => ({ command, order, match: fuzzyMatch(query, command.title) }))
+    .filter((item) => item.match)
+    .sort((a, b) => b.match.score - a.match.score || a.order - b.order);
+}
+
+function render(results) {
   list.replaceChildren();
-  items.forEach((command, index) => {
+  results.forEach(({ command, match }) => {
     const option = document.createElement('li');
     option.className = 'palette-option';
     option.id = 'command-' + commands.indexOf(command);
@@ -45,7 +97,7 @@ function render(items) {
 
     const title = document.createElement('span');
     title.className = 'option-title';
-    title.textContent = command.title;
+    title.append(highlight(command.title, match.positions));
 
     const group = document.createElement('span');
     group.className = 'option-group';
@@ -54,14 +106,14 @@ function render(items) {
     option.append(title, group);
     list.append(option);
   });
-  empty.hidden = items.length > 0;
+  empty.hidden = results.length > 0;
 }
 
 function openPalette() {
   if (!palette.hidden) return;
   returnFocus = document.activeElement;
   input.value = '';
-  render(commands);
+  render(filter(''));
   palette.hidden = false;
   document.body.style.overflow = 'hidden';
   input.focus();
@@ -73,6 +125,8 @@ function closePalette() {
   document.body.style.overflow = '';
   if (returnFocus && returnFocus.focus) returnFocus.focus();
 }
+
+input.addEventListener('input', () => render(filter(input.value)));
 
 openButton.querySelector('.shortcut').textContent = isMac ? '⌘ K' : 'Ctrl K';
 openButton.addEventListener('click', openPalette);
