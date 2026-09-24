@@ -10,25 +10,28 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main">
-      <a class="brand" href="#home">Qahwa</a>
+      <a class="brand" href="#home" data-i18n="brand">Qahwa</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
         <span class="menu-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Menu</span>
+        <span class="visually-hidden" data-i18n="menu">Menu</span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#home" aria-current="page">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#branches">Branches</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" aria-current="page" data-i18n="home">Home</a></li>
+        <li><a href="#menu" data-i18n="coffee">Menu</a></li>
+        <li><a href="#branches" data-i18n="branches">Branches</a></li>
+        <li><a href="#about" data-i18n="about">About</a></li>
+        <li><a href="#contact" data-i18n="contact">Contact</a></li>
       </ul>
-      <a class="nav-cta" href="#order">Order now</a>
+      <div class="nav-actions">
+        <button class="lang-toggle" type="button" lang="ar" data-i18n-switch>العربية</button>
+        <a class="nav-cta" href="#order" data-i18n="order">Order now</a>
+      </div>
     </nav>
   </header>
 
   <main id="home" class="hero">
-    <h1>Specialty coffee, roasted in Cairo</h1>
-    <p>Fresh beans every week, delivered to your door or ready at the nearest branch.</p>
+    <h1 data-i18n="title">Specialty coffee, roasted in Cairo</h1>
+    <p data-i18n="lead">Fresh beans every week, delivered to your door or ready at the nearest branch.</p>
   </main>
 
   <script src="main.js"></script>

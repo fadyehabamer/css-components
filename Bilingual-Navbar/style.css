@@ -90,6 +90,33 @@ a {
   background: var(--bg);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-toggle {
+  min-block-size: 40px;
+  padding-block: 0.4rem;
+  padding-inline: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.lang-toggle:lang(ar) {
+  font-family: var(--font-ar);
+}
+
+.lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .nav-cta {
   padding-block: 0.5rem;
   padding-inline: 1rem;
@@ -198,7 +225,7 @@ a {
     order: 3;
   }
 
-  .nav-cta {
+  .nav-actions {
     margin-inline-start: auto;
   }
 
