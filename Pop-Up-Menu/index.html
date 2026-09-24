@@ -1,11 +1,12 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Popup Menu Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     * {
@@ -142,7 +143,7 @@
 
 
   <div class="menu">
-    <div class="menu__button">+</div>
+    <div class="menu__button" role="button" tabindex="0" aria-label="Toggle menu">+</div>
     <div class="menu__content">
       <h4 class="menu__title">Add Integration</h4>
       <ul class="menu__content__list">
@@ -164,6 +165,13 @@
     button.addEventListener("click", function () {
       clearInterval(interactionPreview);
       toggleMenu();
+    });
+
+    button.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        button.click();
+      }
     });
 
     let interactionPreview = setInterval(() => {
