@@ -2,7 +2,7 @@
 
 > CSS UI components — navbars, cards, forms, sliders, tooltips
 
-**65 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
+**66 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
 
 | Demo | Description | Preview |
 |------|-------------|---------|
@@ -67,6 +67,7 @@
 | [`SlideOut-CardAnimation`](./SlideOut-CardAnimation/) | Profile card whose back panel slides out on hover (CSS3) | [🔗 Live](https://fadyehabamer.github.io/css-components/SlideOut-CardAnimation/) |
 | [`SocialCard-HoverAnimation`](./SocialCard-HoverAnimation/) | Social "follow me" cards that reveal a link on hover - plain, transition and keyframe variants | [🔗 Live](https://fadyehabamer.github.io/css-components/SocialCard-HoverAnimation/) |
 | [`Tilt-Card-Effect`](./Tilt-Card-Effect/) | Profile card with Tilt Effect | [🔗 Live](https://fadyehabamer.github.io/css-components/Tilt-Card-Effect/) |
+| [`Toast-Stack`](./Toast-Stack/) | Stacking toast notifications (success / error / info) with auto-dismiss that pauses on hover and focus | [🔗 Live](https://fadyehabamer.github.io/css-components/Toast-Stack/) |
 | [`Tooltip-box`](./Tooltip-box/) | Tool Tip Div | [🔗 Live](https://fadyehabamer.github.io/css-components/Tooltip-box/) |
 | [`Transparent-LoginPage`](./Transparent-LoginPage/) | Transparent login page using css3 | [🔗 Live](https://fadyehabamer.github.io/css-components/Transparent-LoginPage/) |
 | [`VariableHeight-onHoverCards`](./VariableHeight-onHoverCards/) | Variable height cards when hover using css3 | [🔗 Live](https://fadyehabamer.github.io/css-components/VariableHeight-onHoverCards/) |
