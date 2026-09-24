@@ -6,3 +6,11 @@ menu_icon.onclick=function(){
 
     
 }
+
+// keyboard access for the menu icon
+menu_icon.onkeydown=function(e){
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault()
+        menu_icon.onclick()
+    }
+}
