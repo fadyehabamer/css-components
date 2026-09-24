@@ -14,7 +14,7 @@
     <div class="popup" id="popup-1">
         <div class="overlay"></div>
         <div class="content">
-            <div class="close-btn" onclick="togglePopup()">×</div>
+            <div class="close-btn" onclick="togglePopup()" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); togglePopup(); }" role="button" tabindex="0" aria-label="Close">×</div>
             <h1>Oops !</h1>
             <span>
                 <lord-icon src="https://cdn.lordicon.com//tdrtiskw.json" trigger="loop"
