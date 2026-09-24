@@ -1,4 +1,5 @@
 const stack = document.querySelector('.toast-stack');
+const DURATION = 5000;
 
 const presets = {
   success: { icon: '✓', title: 'Changes saved', message: 'Your profile has been updated.' },
@@ -8,6 +9,7 @@ const presets = {
 
 function removeToast(toast) {
   if (!toast.isConnected) return;
+  clearTimeout(toast.timer);
   const next = toast.nextElementSibling || toast.previousElementSibling;
   const hadFocus = toast.contains(document.activeElement);
   toast.remove();
@@ -45,8 +47,16 @@ function showToast(type, options = {}) {
   close.textContent = '×';
   close.addEventListener('click', () => removeToast(toast));
 
-  toast.append(icon, body, close);
+  const progress = document.createElement('span');
+  progress.className = 'toast-progress';
+  progress.setAttribute('aria-hidden', 'true');
+
+  const duration = options.duration || DURATION;
+  toast.style.setProperty('--duration', duration + 'ms');
+  toast.append(icon, body, close, progress);
   stack.append(toast);
+
+  toast.timer = setTimeout(() => removeToast(toast), duration);
   return toast;
 }
 

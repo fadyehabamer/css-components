@@ -167,3 +167,30 @@ body {
   background: var(--bg);
   color: var(--ink);
 }
+
+.toast-progress {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 3px;
+  background: var(--tone);
+  opacity: 0.35;
+  transform-origin: left;
+  animation: countdown var(--duration, 5s) linear forwards;
+}
+
+[dir="rtl"] .toast-progress {
+  transform-origin: right;
+}
+
+@keyframes countdown {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast-progress {
+    animation: none;
+  }
+}
