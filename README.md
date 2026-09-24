@@ -2,7 +2,7 @@
 
 > CSS UI components — navbars, cards, forms, sliders, tooltips
 
-**67 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
+**68 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
 
 | Demo | Description | Preview |
 |------|-------------|---------|
@@ -61,6 +61,7 @@
 | [`PopupMessage-javaScript`](./PopupMessage-javaScript/) | Popup message using CSS & javascript | [🔗 Live](https://fadyehabamer.github.io/css-components/PopupMessage-javaScript/) |
 | [`PricingCards-LVL1-CatReloaded`](./PricingCards-LVL1-CatReloaded/) | Three-column price comparison table (Cat Reloaded level-1 task) | [🔗 Live](https://fadyehabamer.github.io/css-components/PricingCards-LVL1-CatReloaded/) |
 | [`RTL-Navigation-bar`](./RTL-Navigation-bar/) | Navigation bar with custom JS option | [🔗 Live](https://fadyehabamer.github.io/css-components/RTL-Navigation-bar/) |
+| [`RTL-Pricing-Table`](./RTL-Pricing-Table/) | Arabic-first pricing cards with a monthly / yearly toggle and SAR / EGP prices via Intl.NumberFormat | [🔗 Live](https://fadyehabamer.github.io/css-components/RTL-Pricing-Table/) |
 | [`Random.inc-Form`](./Random.inc-Form/) | SignUp form for a random.inc | [🔗 Live](https://fadyehabamer.github.io/css-components/Random.inc-Form/) |
 | [`SVGs-LoginPage`](./SVGs-LoginPage/) | Login page decorated with SVG waves and blob shapes (not responsive) | [🔗 Live](https://fadyehabamer.github.io/css-components/SVGs-LoginPage/) |
 | [`Shopee-Ecommerce-Website`](./Shopee-Ecommerce-Website/) | Using Flickityy library for carousels | [🔗 Live](https://fadyehabamer.github.io/css-components/Shopee-Ecommerce-Website/) |
