@@ -10,6 +10,7 @@
   --focus: #4f46e5;
   --backdrop: rgb(15 18 30 / 0.45);
   --radius: 12px;
+  --speed: 160ms;
   --shadow: 0 24px 60px rgb(15 18 30 / 0.25);
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
@@ -122,6 +123,7 @@ kbd {
   position: fixed;
   inset: 0;
   background: var(--backdrop);
+  animation: fade-in var(--speed) ease-out;
 }
 
 .palette-panel {
@@ -132,6 +134,7 @@ kbd {
   background: var(--surface);
   box-shadow: var(--shadow);
   overflow: hidden;
+  animation: panel-in var(--speed) ease-out;
 }
 
 .palette-search {
@@ -178,6 +181,7 @@ kbd {
 }
 
 .palette-option {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -189,7 +193,16 @@ kbd {
 
 .palette-option[aria-selected="true"] {
   background: var(--accent-soft);
-  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.palette-option[aria-selected="true"]::before {
+  content: "";
+  position: absolute;
+  inset-block: 0.4rem;
+  inset-inline-start: 0;
+  inline-size: 3px;
+  border-radius: 3px;
+  background: var(--accent);
 }
 
 .palette-option mark {
@@ -209,4 +222,57 @@ kbd {
   padding: 1.5rem;
   text-align: center;
   color: var(--muted);
+}
+
+.palette-hints {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+  border-block-start: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@media (max-width: 480px) {
+  .palette {
+    padding-block-start: 1rem;
+    padding-inline: 0.5rem;
+  }
+
+  .palette-list {
+    max-block-size: 60vh;
+  }
+
+  .option-group {
+    display: none;
+  }
+
+  .palette-hints {
+    display: none;
+  }
+
+  .page {
+    padding-block: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palette-backdrop,
+  .palette-panel {
+    animation: none;
+  }
 }
