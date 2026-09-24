@@ -57,6 +57,69 @@ body {
   color: var(--muted);
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block-end: 2.5rem;
+}
+
+.segmented {
+  display: inline-flex;
+  margin: 0;
+  padding: 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.segmented input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.segmented label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-block: 0.45rem;
+  padding-inline: 1.1rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.segmented input:checked + label {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.segmented input:focus-visible + label {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.save {
+  padding-block: 0.05rem;
+  padding-inline: 0.5rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.75rem;
+}
+
 .plans {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -109,7 +172,14 @@ body {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.35rem;
-  margin-block: 0 1.25rem;
+  margin: 0;
+}
+
+.plan-note {
+  min-block-size: 1.7em;
+  margin-block: 0.25rem 1rem;
+  color: var(--accent);
+  font-size: 0.9rem;
 }
 
 .amount {

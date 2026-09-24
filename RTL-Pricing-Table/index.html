@@ -14,11 +14,22 @@
       <p>كل الباقات تشمل تجربة مجانية لمدة ١٤ يومًا، ويمكنك الإلغاء في أي وقت.</p>
     </header>
 
+    <div class="controls">
+      <fieldset class="segmented" id="billing">
+        <legend class="visually-hidden">مدة الاشتراك</legend>
+        <input type="radio" id="billing-monthly" name="billing" value="monthly" checked>
+        <label for="billing-monthly">شهري</label>
+        <input type="radio" id="billing-yearly" name="billing" value="yearly">
+        <label for="billing-yearly">سنوي <span class="save">شهران مجانًا</span></label>
+      </fieldset>
+    </div>
+
     <div class="plans">
       <article class="plan" data-plan="basic" aria-labelledby="plan-basic">
         <h2 class="plan-name" id="plan-basic">أساسي</h2>
         <p class="plan-desc">للأفراد والمشاريع الصغيرة.</p>
         <p class="plan-price"><span class="amount">٣٩</span> <span class="currency">ر.س.</span> <span class="period">/ شهريًا</span></p>
+        <p class="plan-note"></p>
         <ul class="plan-features">
           <li>٣ مشاريع</li>
           <li>مساحة تخزين ٥ جيجابايت</li>
@@ -32,6 +43,7 @@
         <h2 class="plan-name" id="plan-pro">احترافي</h2>
         <p class="plan-desc">للفرق التي تنمو بسرعة.</p>
         <p class="plan-price"><span class="amount">٩٩</span> <span class="currency">ر.س.</span> <span class="period">/ شهريًا</span></p>
+        <p class="plan-note"></p>
         <ul class="plan-features">
           <li>مشاريع غير محدودة</li>
           <li>مساحة تخزين ١٠٠ جيجابايت</li>
@@ -45,6 +57,7 @@
         <h2 class="plan-name" id="plan-business">مؤسسات</h2>
         <p class="plan-desc">للشركات التي تحتاج تحكمًا كاملًا.</p>
         <p class="plan-price"><span class="amount">٢٤٩</span> <span class="currency">ر.س.</span> <span class="period">/ شهريًا</span></p>
+        <p class="plan-note"></p>
         <ul class="plan-features">
           <li>كل مزايا الباقة الاحترافية</li>
           <li>تسجيل دخول موحّد</li>
@@ -55,5 +68,7 @@
       </article>
     </div>
   </main>
+
+  <script src="main.js"></script>
 </body>
 </html>
