@@ -10,4 +10,11 @@ div.addEventListener("click", () => {
     } else {
         div.innerHTML = "✊"
     }
+    div.setAttribute("aria-expanded", nav.classList.contains("active"))
+})
+div.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault()
+        div.click()
+    }
 })
