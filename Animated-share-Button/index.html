@@ -1,22 +1,23 @@
-#<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animated Share Button</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/f6816dd194.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/v4-font-face.min.css">
 </head>
 <body>
     <div class="main">
         <div class="share">
             <ol>
-                <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
-                <li><a href="#"><i class="fab fa-whatsapp fa-2x"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                <li><a href="#" aria-label="Share on Instagram"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a></li>
             </ol>
-            <div class="toggle"></div>
+            <div class="toggle" role="button" tabindex="0" aria-label="Share" aria-expanded="false"></div>
         </div>
     </div>
 
@@ -26,6 +27,13 @@
         toggle.addEventListener('click',()=>{
             const sharebtn = document.querySelector('.share');
             sharebtn.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', sharebtn.classList.contains('active'));
+        })
+        toggle.addEventListener('keydown',(e)=>{
+            if(e.key === 'Enter' || e.key === ' '){
+                e.preventDefault();
+                toggle.click();
+            }
         })
     </script>
 </body>
