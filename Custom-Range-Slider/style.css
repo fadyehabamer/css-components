@@ -65,6 +65,11 @@ body {
     box-shadow: 0 0 0 20px #fcf95140;
 }
 
+/* keyboard focus indicator (outline is removed globally) */
+.slider-container .slider:focus-visible::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 20px #fcf95140;
+}
+
 
 /* for firefox browser */
 
@@ -82,4 +87,8 @@ body {
 .slider-container .slider::-moz-range-thumb:hover,
 .slider-container .slider::-moz-range-thumb:active {
     box-shadow: 0 0 0 20px #fcf95140;
+}
+
+.slider-container .slider:focus-visible::-moz-range-thumb {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 20px #fcf95140;
 }
