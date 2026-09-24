@@ -2,7 +2,7 @@
 
 > CSS UI components — navbars, cards, forms, sliders, tooltips
 
-**63 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
+**64 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
 
 | Demo | Description | Preview |
 |------|-------------|---------|
@@ -12,6 +12,7 @@
 | [`AOT-Accordion`](./AOT-Accordion/) | Horizontal image accordion slider built with pure CSS | [🔗 Live](https://fadyehabamer.github.io/css-components/AOT-Accordion/) |
 | [`Accordion-JS`](./Accordion-JS/) | Dynamic Accordion using javascript | [🔗 Live](https://fadyehabamer.github.io/css-components/Accordion-JS/) |
 | [`Animated-share-Button`](./Animated-share-Button/) | animated share button when clicked | [🔗 Live](https://fadyehabamer.github.io/css-components/Animated-share-Button/) |
+| [`Bilingual-Navbar`](./Bilingual-Navbar/) | Responsive navbar with an Arabic / English toggle that flips lang and dir (logical CSS properties) | [🔗 Live](https://fadyehabamer.github.io/css-components/Bilingual-Navbar/) |
 | [`Change-Navbar-onScroll`](./Change-Navbar-onScroll/) | Change background, position of Navbar onScroll | [🔗 Live](https://fadyehabamer.github.io/css-components/Change-Navbar-onScroll/) |
 | [`Circular-Navbar`](./Circular-Navbar/) | Cool Circular Navigation menu | [🔗 Live](https://fadyehabamer.github.io/css-components/Circular-Navbar/) |
 | [`Custom-Bootstrap4-Carousel`](./Custom-Bootstrap4-Carousel/) | custom carousel using Bootstrap 4 + Css3 | [🔗 Live](https://fadyehabamer.github.io/css-components/Custom-Bootstrap4-Carousel/) |
