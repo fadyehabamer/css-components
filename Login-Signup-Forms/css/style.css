@@ -66,6 +66,11 @@ outline: none;
 background: white;
 padding-left: 45px;
 }
+/* keyboard focus indicator (outline is removed above) */
+.form-box .form-input input:focus-visible{
+outline: 2px solid #007bff;
+outline-offset: 2px;
+}
 .form-box .form-input span{
 position: absolute;
 top: 8px;
