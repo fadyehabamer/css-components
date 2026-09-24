@@ -29,6 +29,39 @@ function initTabs(root) {
     select(tabs.indexOf(tab));
   });
 
+  list.addEventListener('keydown', (event) => {
+    const current = tabs.indexOf(event.target);
+    if (current === -1) return;
+
+    const last = tabs.length - 1;
+    let next = null;
+
+    switch (event.key) {
+      case 'ArrowRight':
+        next = current === last ? 0 : current + 1;
+        break;
+      case 'ArrowLeft':
+        next = current === 0 ? last : current - 1;
+        break;
+      case 'Home':
+        next = 0;
+        break;
+      case 'End':
+        next = last;
+        break;
+      case ' ':
+        event.preventDefault();
+        select(current);
+        return;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    tabs[next].focus();
+    select(next);
+  });
+
   const fromHash = panels.findIndex((panel) => '#' + panel.id === location.hash);
   select(fromHash === -1 ? 0 : fromHash);
 }
