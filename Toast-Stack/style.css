@@ -51,6 +51,15 @@ body {
   color: var(--muted);
 }
 
+kbd {
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.85em;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -195,6 +204,26 @@ body {
 @keyframes countdown {
   to {
     transform: scaleX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .toast-region {
+    inset-inline: 0.75rem;
+    inset-block-end: 0.75rem;
+    inline-size: auto;
+  }
+
+  .demo {
+    padding-block: 2.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    inline-size: 100%;
   }
 }
 
