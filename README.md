@@ -2,7 +2,7 @@
 
 > CSS UI components — navbars, cards, forms, sliders, tooltips
 
-**68 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
+**69 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
 
 | Demo | Description | Preview |
 |------|-------------|---------|
@@ -10,6 +10,7 @@
 | [`3D-cards`](./3D-cards/) | Image cards with a 3D tilt-on-hover effect (tilt.js) | [🔗 Live](https://fadyehabamer.github.io/css-components/3D-cards/) |
 | [`3d-Navigation-Bar`](./3d-Navigation-Bar/) | Full-screen navigation menu with an animated 3D open/close transition | [🔗 Live](https://fadyehabamer.github.io/css-components/3d-Navigation-Bar/) |
 | [`AOT-Accordion`](./AOT-Accordion/) | Horizontal image accordion slider built with pure CSS | [🔗 Live](https://fadyehabamer.github.io/css-components/AOT-Accordion/) |
+| [`Accessible-Tabs`](./Accessible-Tabs/) | WAI-ARIA tabs with roving tabindex, arrow keys, Home / End and automatic or manual activation | [🔗 Live](https://fadyehabamer.github.io/css-components/Accessible-Tabs/) |
 | [`Accordion-JS`](./Accordion-JS/) | Dynamic Accordion using javascript | [🔗 Live](https://fadyehabamer.github.io/css-components/Accordion-JS/) |
 | [`Animated-share-Button`](./Animated-share-Button/) | animated share button when clicked | [🔗 Live](https://fadyehabamer.github.io/css-components/Animated-share-Button/) |
 | [`Bilingual-Navbar`](./Bilingual-Navbar/) | Responsive navbar with an Arabic / English toggle that flips lang and dir (logical CSS properties) | [🔗 Live](https://fadyehabamer.github.io/css-components/Bilingual-Navbar/) |
