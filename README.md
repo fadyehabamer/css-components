@@ -2,7 +2,7 @@
 
 > CSS UI components — navbars, cards, forms, sliders, tooltips
 
-**64 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
+**65 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
 
 | Demo | Description | Preview |
 |------|-------------|---------|
@@ -15,6 +15,7 @@
 | [`Bilingual-Navbar`](./Bilingual-Navbar/) | Responsive navbar with an Arabic / English toggle that flips lang and dir (logical CSS properties) | [🔗 Live](https://fadyehabamer.github.io/css-components/Bilingual-Navbar/) |
 | [`Change-Navbar-onScroll`](./Change-Navbar-onScroll/) | Change background, position of Navbar onScroll | [🔗 Live](https://fadyehabamer.github.io/css-components/Change-Navbar-onScroll/) |
 | [`Circular-Navbar`](./Circular-Navbar/) | Cool Circular Navigation menu | [🔗 Live](https://fadyehabamer.github.io/css-components/Circular-Navbar/) |
+| [`Command-Palette`](./Command-Palette/) | Ctrl/Cmd + K command palette with fuzzy search, arrow-key navigation and a focus trap | [🔗 Live](https://fadyehabamer.github.io/css-components/Command-Palette/) |
 | [`Custom-Bootstrap4-Carousel`](./Custom-Bootstrap4-Carousel/) | custom carousel using Bootstrap 4 + Css3 | [🔗 Live](https://fadyehabamer.github.io/css-components/Custom-Bootstrap4-Carousel/) |
 | [`Custom-Range-Slider`](./Custom-Range-Slider/) | Custom Range Slider | [🔗 Live](https://fadyehabamer.github.io/css-components/Custom-Range-Slider/) |
 | [`CustomerReview-Carousel`](./CustomerReview-Carousel/) | Customized swiper carousel for Customers Reviews | [🔗 Live](https://fadyehabamer.github.io/css-components/CustomerReview-Carousel/) |
