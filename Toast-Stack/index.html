@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toast Stack</title>
+  <meta name="description" content="Stacking toast notifications with auto-dismiss that pauses on hover and focus.">
+</head>
+<body>
+  <main class="demo">
+    <h1>Toast notifications</h1>
+    <p>Each toast closes by itself after a few seconds. Hover or focus one to keep it open.</p>
+    <div class="actions">
+      <button class="btn btn-success" type="button" data-toast="success">Save changes</button>
+      <button class="btn btn-error" type="button" data-toast="error">Trigger an error</button>
+      <button class="btn btn-info" type="button" data-toast="info">Show info</button>
+    </div>
+  </main>
+
+  <section class="toast-region" aria-label="Notifications">
+    <ol class="toast-stack" aria-live="polite" aria-relevant="additions"></ol>
+  </section>
+</body>
+</html>
