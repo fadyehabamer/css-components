@@ -8,4 +8,11 @@ menuBtn.addEventListener('click', () => {
     menuBtn.classList.remove('open');
     menuOpen = false;
   }
+  menuBtn.setAttribute('aria-expanded', menuOpen);
+});
+menuBtn.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    menuBtn.click();
+  }
 });
