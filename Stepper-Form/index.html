@@ -92,7 +92,7 @@
       <section class="step" id="step-4" aria-labelledby="step-4-title">
         <h2 class="step-title" id="step-4-title">Review</h2>
         <p>Check your details before creating the workspace.</p>
-        <dl class="summary"></dl>
+        <div class="summary"></div>
       </section>
 
       <p class="visually-hidden" id="step-status" aria-live="polite"></p>
@@ -102,6 +102,12 @@
         <button class="btn btn-primary btn-next" type="submit">Create workspace</button>
       </div>
     </form>
+
+    <section class="done" id="done" hidden aria-labelledby="done-title">
+      <h2 id="done-title" tabindex="-1">Your workspace is ready</h2>
+      <p class="done-text"></p>
+      <button class="btn" type="button" id="restart">Start over</button>
+    </section>
   </main>
 
   <script src="main.js"></script>
