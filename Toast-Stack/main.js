@@ -1,5 +1,8 @@
 const stack = document.querySelector('.toast-stack');
 const DURATION = 5000;
+const MAX_TOASTS = 4;
+const LEAVE_MS = 200;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 const presets = {
   success: { icon: '✓', title: 'Changes saved', message: 'Your profile has been updated.' },
@@ -7,15 +10,29 @@ const presets = {
   info: { icon: 'i', title: 'New version available', message: 'Refresh the page to get the latest features.' }
 };
 
+function activeToasts() {
+  return [...stack.children].filter((toast) => !toast.leaving);
+}
+
 function removeToast(toast) {
-  if (!toast.isConnected) return;
+  if (!toast.isConnected || toast.leaving) return;
   clearTimeout(toast.timer);
-  const next = toast.nextElementSibling || toast.previousElementSibling;
+
+  const others = activeToasts().filter((item) => item !== toast);
   const hadFocus = toast.contains(document.activeElement);
-  toast.remove();
+  toast.leaving = true;
+
   if (hadFocus) {
+    const next = others.find((item) => toast.compareDocumentPosition(item) & Node.DOCUMENT_POSITION_FOLLOWING) || others[others.length - 1];
     const target = next ? next.querySelector('.toast-close') : document.querySelector('[data-toast]');
     if (target) target.focus();
+  }
+
+  if (reducedMotion.matches) {
+    toast.remove();
+  } else {
+    toast.classList.add('is-leaving');
+    setTimeout(() => toast.remove(), LEAVE_MS);
   }
 }
 
@@ -73,6 +90,9 @@ function showToast(type, options = {}) {
   toast.append(icon, body, close, progress);
   stack.append(toast);
 
+  const visible = activeToasts();
+  if (visible.length > MAX_TOASTS) removeToast(visible[0]);
+
   toast.remaining = duration;
   startTimer(toast);
 
@@ -87,6 +107,9 @@ function showToast(type, options = {}) {
   toast.addEventListener('focusin', () => {
     toast.focused = true;
     updatePause(toast);
+  });
+  toast.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') removeToast(toast);
   });
   toast.addEventListener('focusout', (event) => {
     if (toast.contains(event.relatedTarget)) return;
