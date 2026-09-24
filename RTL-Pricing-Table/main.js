@@ -48,6 +48,11 @@ function render(announce = false) {
   });
 
   if (announce) {
+    document.querySelectorAll('.plan-price').forEach((line) => {
+      line.classList.remove('is-updating');
+      void line.offsetWidth;
+      line.classList.add('is-updating');
+    });
     status.textContent = 'الأسعار معروضة الآن ' + (yearly ? 'للاشتراك السنوي' : 'للاشتراك الشهري') + ' ' + currencyNames[code];
   }
 }
