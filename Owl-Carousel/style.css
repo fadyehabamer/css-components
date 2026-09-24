@@ -66,3 +66,8 @@ html,body{
 .card .content .btn button:hover{
   transform: scale(0.9);
 }
+/* keyboard focus indicator (outline is removed above) */
+.card .content .btn button:focus-visible{
+  outline: 2px solid #e74c3c;
+  outline-offset: 2px;
+}
