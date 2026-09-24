@@ -2,6 +2,7 @@ const nav = document.querySelector('.nav');
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.getElementById('nav-links');
 const langToggle = document.querySelector('[data-i18n-switch]');
+const desktop = window.matchMedia('(min-width: 761px)');
 
 const strings = {
   en: {
@@ -67,6 +68,21 @@ menuToggle.addEventListener('click', () => {
 
 navLinks.addEventListener('click', (event) => {
   if (event.target.closest('a')) setMenu(false);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+    setMenu(false);
+    menuToggle.focus();
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenu(false);
+});
+
+desktop.addEventListener('change', (event) => {
+  if (event.matches) setMenu(false);
 });
 
 langToggle.addEventListener('click', () => {
