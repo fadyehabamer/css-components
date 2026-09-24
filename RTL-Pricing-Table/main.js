@@ -5,7 +5,9 @@ const prices = {
 
 const billing = document.getElementById('billing');
 const currency = document.getElementById('currency');
+const status = document.getElementById('price-status');
 const formatters = {};
+const currencyNames = { SAR: 'بالريال السعودي', EGP: 'بالجنيه المصري' };
 
 function formatter(code) {
   if (!formatters[code]) {
@@ -28,7 +30,7 @@ function splitPrice(value, code) {
   return { amount, symbol: symbol ? symbol.value : code };
 }
 
-function render() {
+function render(announce = false) {
   const yearly = billing.querySelector('input:checked').value === 'yearly';
   const code = currency.querySelector('input:checked').value;
 
@@ -44,8 +46,12 @@ function render() {
       ? 'يعادل ' + formatter(code).format(Math.round(total / 12)) + ' شهريًا'
       : '';
   });
+
+  if (announce) {
+    status.textContent = 'الأسعار معروضة الآن ' + (yearly ? 'للاشتراك السنوي' : 'للاشتراك الشهري') + ' ' + currencyNames[code];
+  }
 }
 
-billing.addEventListener('change', render);
-currency.addEventListener('change', render);
+billing.addEventListener('change', () => render(true));
+currency.addEventListener('change', () => render(true));
 render();
