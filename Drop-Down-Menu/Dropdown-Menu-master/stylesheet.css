@@ -33,7 +33,8 @@ nav li ul.drop {
   background-color: red;
 }
 
-nav li:hover ul.drop {
+nav li:hover ul.drop,
+nav li:focus-within ul.drop {
   display: block;
   background-color: rgb(129, 40, 40);
 }
