@@ -95,6 +95,10 @@ h1 {
   outline-offset: -3px;
 }
 
+.tab-panel[hidden] {
+  display: none;
+}
+
 .tab-panel {
   padding: 1.5rem;
   border: 1px solid var(--line);
