@@ -14,6 +14,7 @@ for(let i = 0 ; i< pics.length ; i++){
 
         let popupimg = document.createElement("img")
         popupimg.src = pics[i].src
+        popupimg.alt = pics[i].alt
 
         popupbox.appendChild(popupimg)
 
@@ -23,11 +24,22 @@ for(let i = 0 ; i< pics.length ; i++){
         let x_text = document.createTextNode("X")
         x.appendChild(x_text)
         x.className="close"
+        x.setAttribute("role", "button")
+        x.setAttribute("tabindex", "0")
+        x.setAttribute("aria-label", "Close")
 
 
         popupbox.appendChild(x)
+        x.focus()
 
 
+    })
+    // keyboard access: open the popup with Enter / Space
+    pics[i].addEventListener("keydown" , (e)=>{
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault()
+            pics[i].click()
+        }
     })
 }
 
@@ -35,5 +47,15 @@ document.addEventListener("click" , (e) => {
     if(e.target.className == "close" ){
         e.target.parentElement.remove()
         document.querySelector(".overlay").remove()
+    }
+})
+
+// keyboard access: Enter / Space on the close button, Escape anywhere
+document.addEventListener("keydown" , (e) => {
+    let close = document.querySelector(".popupbox .close")
+    if (!close) return
+    if (e.key === "Escape" || (e.target === close && (e.key === "Enter" || e.key === " "))) {
+        e.preventDefault()
+        close.click()
     }
 })
