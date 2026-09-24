@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stepper Form</title>
+  <meta name="description" content="Multi-step sign-up form with a progress indicator, per-step validation and a review step.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Create your workspace</h1>
+
+    <ol class="progress">
+      <li class="progress-step" aria-current="step"><span class="progress-dot">1</span><span class="progress-label">Account</span></li>
+      <li class="progress-step"><span class="progress-dot">2</span><span class="progress-label">Company</span></li>
+      <li class="progress-step"><span class="progress-dot">3</span><span class="progress-label">Preferences</span></li>
+      <li class="progress-step"><span class="progress-dot">4</span><span class="progress-label">Review</span></li>
+    </ol>
+
+    <form class="stepper" id="signup" action="#" method="post">
+      <section class="step" id="step-1" aria-labelledby="step-1-title">
+        <h2 class="step-title" id="step-1-title">Account</h2>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="name-error">
+          <p class="field-error" id="name-error"></p>
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+          <p class="field-error" id="email-error"></p>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" aria-describedby="password-hint password-error">
+          <p class="field-hint" id="password-hint">At least 8 characters.</p>
+          <p class="field-error" id="password-error"></p>
+        </div>
+      </section>
+
+      <section class="step" id="step-2" aria-labelledby="step-2-title">
+        <h2 class="step-title" id="step-2-title">Company</h2>
+        <div class="field">
+          <label for="company">Company name <span class="optional">(optional)</span></label>
+          <input id="company" name="company" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="size">Team size</label>
+          <select id="size" name="size" required aria-describedby="size-error">
+            <option value="">Choose one</option>
+            <option>Just me</option>
+            <option>2 to 10</option>
+            <option>11 to 50</option>
+            <option>More than 50</option>
+          </select>
+          <p class="field-error" id="size-error"></p>
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <select id="country" name="country" required autocomplete="country-name" aria-describedby="country-error">
+            <option value="">Choose a country</option>
+            <option>Egypt</option>
+            <option>Saudi Arabia</option>
+            <option>United Arab Emirates</option>
+            <option>Jordan</option>
+            <option>Other</option>
+          </select>
+          <p class="field-error" id="country-error"></p>
+        </div>
+      </section>
+
+      <section class="step" id="step-3" aria-labelledby="step-3-title">
+        <h2 class="step-title" id="step-3-title">Preferences</h2>
+        <fieldset class="field group" id="topics" aria-describedby="topics-error">
+          <legend>What will you use it for?</legend>
+          <label class="choice"><input type="checkbox" name="topics" value="Projects"> Projects</label>
+          <label class="choice"><input type="checkbox" name="topics" value="Docs"> Docs</label>
+          <label class="choice"><input type="checkbox" name="topics" value="Planning"> Planning</label>
+          <label class="choice"><input type="checkbox" name="topics" value="Support"> Support</label>
+          <p class="field-error" id="topics-error"></p>
+        </fieldset>
+        <fieldset class="field group" id="contact" aria-describedby="contact-error">
+          <legend>How should we reach you?</legend>
+          <label class="choice"><input type="radio" name="contact" value="Email" required> Email</label>
+          <label class="choice"><input type="radio" name="contact" value="Phone"> Phone</label>
+          <label class="choice"><input type="radio" name="contact" value="No contact"> Don't contact me</label>
+          <p class="field-error" id="contact-error"></p>
+        </fieldset>
+      </section>
+
+      <section class="step" id="step-4" aria-labelledby="step-4-title">
+        <h2 class="step-title" id="step-4-title">Review</h2>
+        <p>Check your details before creating the workspace.</p>
+        <div class="summary"></div>
+      </section>
+
+      <p class="visually-hidden" id="step-status" aria-live="polite"></p>
+
+      <div class="step-actions">
+        <button class="btn btn-back" type="button" hidden>Back</button>
+        <button class="btn btn-primary btn-next" type="submit">Create workspace</button>
+      </div>
+    </form>
+
+    <section class="done" id="done" hidden aria-labelledby="done-title">
+      <h2 id="done-title" tabindex="-1">Your workspace is ready</h2>
+      <p class="done-text"></p>
+      <button class="btn" type="button" id="restart">Start over</button>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

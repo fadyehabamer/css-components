@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Command Palette</title>
+  <meta name="description" content="Ctrl/Cmd + K command palette with fuzzy search and full keyboard support.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>Workspace</h1>
+    <p>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> (or <kbd>⌘</kbd> + <kbd>K</kbd> on a Mac) to open the command palette.</p>
+    <button class="open-palette" type="button">
+      <span>Search commands</span>
+      <kbd class="shortcut">Ctrl K</kbd>
+    </button>
+    <p class="last-run" role="status"></p>
+  </main>
+
+  <div class="palette" id="palette" hidden>
+    <div class="palette-backdrop"></div>
+    <div class="palette-panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+      <h2 class="visually-hidden" id="palette-title">Command palette</h2>
+      <div class="palette-search">
+        <input class="palette-input" id="palette-input" type="text" placeholder="Type a command..." autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-label="Search commands">
+        <button class="palette-close" type="button">Esc</button>
+      </div>
+      <ul class="palette-list" id="palette-list" role="listbox" aria-label="Commands"></ul>
+      <p class="palette-empty" hidden>No commands match.</p>
+      <p class="palette-hints" aria-hidden="true">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> move</span>
+        <span><kbd>Enter</kbd> run</span>
+        <span><kbd>Esc</kbd> close</span>
+      </p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

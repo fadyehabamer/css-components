@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>جدول الأسعار</title>
+  <meta name="description" content="بطاقات أسعار عربية مع تبديل بين الدفع الشهري والسنوي وعرض الأسعار بالريال السعودي أو الجنيه المصري.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="pricing">
+    <header class="pricing-header">
+      <h1>اختر الباقة المناسبة لفريقك</h1>
+      <p>كل الباقات تشمل تجربة مجانية لمدة ١٤ يومًا، ويمكنك الإلغاء في أي وقت.</p>
+    </header>
+
+    <div class="controls">
+      <fieldset class="segmented" id="billing">
+        <legend class="visually-hidden">مدة الاشتراك</legend>
+        <input type="radio" id="billing-monthly" name="billing" value="monthly" checked>
+        <label for="billing-monthly">شهري</label>
+        <input type="radio" id="billing-yearly" name="billing" value="yearly">
+        <label for="billing-yearly">سنوي <span class="save">شهران مجانًا</span></label>
+      </fieldset>
+
+      <fieldset class="segmented" id="currency">
+        <legend class="visually-hidden">العملة</legend>
+        <input type="radio" id="currency-sar" name="currency" value="SAR" checked>
+        <label for="currency-sar">ريال سعودي</label>
+        <input type="radio" id="currency-egp" name="currency" value="EGP">
+        <label for="currency-egp">جنيه مصري</label>
+      </fieldset>
+    </div>
+
+    <p class="visually-hidden" id="price-status" aria-live="polite"></p>
+
+    <div class="plans">
+      <article class="plan" data-plan="basic" aria-labelledby="plan-basic">
+        <h2 class="plan-name" id="plan-basic">أساسي</h2>
+        <p class="plan-desc">للأفراد والمشاريع الصغيرة.</p>
+        <p class="plan-price"><span class="amount">٣٩</span> <span class="currency">ر.س.</span> <span class="period">/ شهريًا</span></p>
+        <p class="plan-note"></p>
+        <ul class="plan-features">
+          <li>٣ مشاريع</li>
+          <li>مساحة تخزين ٥ جيجابايت</li>
+          <li>دعم عبر البريد الإلكتروني</li>
+        </ul>
+        <a class="plan-cta" href="#start-basic">ابدأ الآن</a>
+      </article>
+
+      <article class="plan plan-featured" data-plan="pro" aria-labelledby="plan-pro">
+        <p class="plan-badge">الأكثر طلبًا</p>
+        <h2 class="plan-name" id="plan-pro">احترافي</h2>
+        <p class="plan-desc">للفرق التي تنمو بسرعة.</p>
+        <p class="plan-price"><span class="amount">٩٩</span> <span class="currency">ر.س.</span> <span class="period">/ شهريًا</span></p>
+        <p class="plan-note"></p>
+        <ul class="plan-features">
+          <li>مشاريع غير محدودة</li>
+          <li>مساحة تخزين ١٠٠ جيجابايت</li>
+          <li>صلاحيات للأعضاء</li>
+          <li>دعم فني خلال ساعات العمل</li>
+        </ul>
+        <a class="plan-cta" href="#start-pro">جرّب الباقة الاحترافية</a>
+      </article>
+
+      <article class="plan" data-plan="business" aria-labelledby="plan-business">
+        <h2 class="plan-name" id="plan-business">مؤسسات</h2>
+        <p class="plan-desc">للشركات التي تحتاج تحكمًا كاملًا.</p>
+        <p class="plan-price"><span class="amount">٢٤٩</span> <span class="currency">ر.س.</span> <span class="period">/ شهريًا</span></p>
+        <p class="plan-note"></p>
+        <ul class="plan-features">
+          <li>كل مزايا الباقة الاحترافية</li>
+          <li>تسجيل دخول موحّد</li>
+          <li>سجل كامل للنشاط</li>
+          <li>مدير حساب مخصص</li>
+        </ul>
+        <a class="plan-cta" href="#contact-sales">تواصل مع المبيعات</a>
+      </article>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

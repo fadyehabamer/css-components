@@ -2,7 +2,7 @@
 
 > CSS UI components — navbars, cards, forms, sliders, tooltips
 
-**63 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
+**69 demos** · 🔗 **[Live gallery](https://fadyehabamer.github.io/css-components/)** — every demo is deployed to GitHub Pages.
 
 | Demo | Description | Preview |
 |------|-------------|---------|
@@ -10,10 +10,13 @@
 | [`3D-cards`](./3D-cards/) | Image cards with a 3D tilt-on-hover effect (tilt.js) | [🔗 Live](https://fadyehabamer.github.io/css-components/3D-cards/) |
 | [`3d-Navigation-Bar`](./3d-Navigation-Bar/) | Full-screen navigation menu with an animated 3D open/close transition | [🔗 Live](https://fadyehabamer.github.io/css-components/3d-Navigation-Bar/) |
 | [`AOT-Accordion`](./AOT-Accordion/) | Horizontal image accordion slider built with pure CSS | [🔗 Live](https://fadyehabamer.github.io/css-components/AOT-Accordion/) |
+| [`Accessible-Tabs`](./Accessible-Tabs/) | WAI-ARIA tabs with roving tabindex, arrow keys, Home / End and automatic or manual activation | [🔗 Live](https://fadyehabamer.github.io/css-components/Accessible-Tabs/) |
 | [`Accordion-JS`](./Accordion-JS/) | Dynamic Accordion using javascript | [🔗 Live](https://fadyehabamer.github.io/css-components/Accordion-JS/) |
 | [`Animated-share-Button`](./Animated-share-Button/) | animated share button when clicked | [🔗 Live](https://fadyehabamer.github.io/css-components/Animated-share-Button/) |
+| [`Bilingual-Navbar`](./Bilingual-Navbar/) | Responsive navbar with an Arabic / English toggle that flips lang and dir (logical CSS properties) | [🔗 Live](https://fadyehabamer.github.io/css-components/Bilingual-Navbar/) |
 | [`Change-Navbar-onScroll`](./Change-Navbar-onScroll/) | Change background, position of Navbar onScroll | [🔗 Live](https://fadyehabamer.github.io/css-components/Change-Navbar-onScroll/) |
 | [`Circular-Navbar`](./Circular-Navbar/) | Cool Circular Navigation menu | [🔗 Live](https://fadyehabamer.github.io/css-components/Circular-Navbar/) |
+| [`Command-Palette`](./Command-Palette/) | Ctrl/Cmd + K command palette with fuzzy search, arrow-key navigation and a focus trap | [🔗 Live](https://fadyehabamer.github.io/css-components/Command-Palette/) |
 | [`Custom-Bootstrap4-Carousel`](./Custom-Bootstrap4-Carousel/) | custom carousel using Bootstrap 4 + Css3 | [🔗 Live](https://fadyehabamer.github.io/css-components/Custom-Bootstrap4-Carousel/) |
 | [`Custom-Range-Slider`](./Custom-Range-Slider/) | Custom Range Slider | [🔗 Live](https://fadyehabamer.github.io/css-components/Custom-Range-Slider/) |
 | [`CustomerReview-Carousel`](./CustomerReview-Carousel/) | Customized swiper carousel for Customers Reviews | [🔗 Live](https://fadyehabamer.github.io/css-components/CustomerReview-Carousel/) |
@@ -59,12 +62,15 @@
 | [`PopupMessage-javaScript`](./PopupMessage-javaScript/) | Popup message using CSS & javascript | [🔗 Live](https://fadyehabamer.github.io/css-components/PopupMessage-javaScript/) |
 | [`PricingCards-LVL1-CatReloaded`](./PricingCards-LVL1-CatReloaded/) | Three-column price comparison table (Cat Reloaded level-1 task) | [🔗 Live](https://fadyehabamer.github.io/css-components/PricingCards-LVL1-CatReloaded/) |
 | [`RTL-Navigation-bar`](./RTL-Navigation-bar/) | Navigation bar with custom JS option | [🔗 Live](https://fadyehabamer.github.io/css-components/RTL-Navigation-bar/) |
+| [`RTL-Pricing-Table`](./RTL-Pricing-Table/) | Arabic-first pricing cards with a monthly / yearly toggle and SAR / EGP prices via Intl.NumberFormat | [🔗 Live](https://fadyehabamer.github.io/css-components/RTL-Pricing-Table/) |
 | [`Random.inc-Form`](./Random.inc-Form/) | SignUp form for a random.inc | [🔗 Live](https://fadyehabamer.github.io/css-components/Random.inc-Form/) |
 | [`SVGs-LoginPage`](./SVGs-LoginPage/) | Login page decorated with SVG waves and blob shapes (not responsive) | [🔗 Live](https://fadyehabamer.github.io/css-components/SVGs-LoginPage/) |
 | [`Shopee-Ecommerce-Website`](./Shopee-Ecommerce-Website/) | Using Flickityy library for carousels | [🔗 Live](https://fadyehabamer.github.io/css-components/Shopee-Ecommerce-Website/) |
 | [`SlideOut-CardAnimation`](./SlideOut-CardAnimation/) | Profile card whose back panel slides out on hover (CSS3) | [🔗 Live](https://fadyehabamer.github.io/css-components/SlideOut-CardAnimation/) |
 | [`SocialCard-HoverAnimation`](./SocialCard-HoverAnimation/) | Social "follow me" cards that reveal a link on hover - plain, transition and keyframe variants | [🔗 Live](https://fadyehabamer.github.io/css-components/SocialCard-HoverAnimation/) |
+| [`Stepper-Form`](./Stepper-Form/) | Multi-step form with a progress indicator, per-step validation, back / next and a review step | [🔗 Live](https://fadyehabamer.github.io/css-components/Stepper-Form/) |
 | [`Tilt-Card-Effect`](./Tilt-Card-Effect/) | Profile card with Tilt Effect | [🔗 Live](https://fadyehabamer.github.io/css-components/Tilt-Card-Effect/) |
+| [`Toast-Stack`](./Toast-Stack/) | Stacking toast notifications (success / error / info) with auto-dismiss that pauses on hover and focus | [🔗 Live](https://fadyehabamer.github.io/css-components/Toast-Stack/) |
 | [`Tooltip-box`](./Tooltip-box/) | Tool Tip Div | [🔗 Live](https://fadyehabamer.github.io/css-components/Tooltip-box/) |
 | [`Transparent-LoginPage`](./Transparent-LoginPage/) | Transparent login page using css3 | [🔗 Live](https://fadyehabamer.github.io/css-components/Transparent-LoginPage/) |
 | [`VariableHeight-onHoverCards`](./VariableHeight-onHoverCards/) | Variable height cards when hover using css3 | [🔗 Live](https://fadyehabamer.github.io/css-components/VariableHeight-onHoverCards/) |

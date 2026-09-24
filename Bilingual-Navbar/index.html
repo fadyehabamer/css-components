@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bilingual Navbar</title>
+  <meta name="description" content="Responsive navbar with an Arabic / English toggle that flips the page direction.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#home" data-i18n="brand">Qahwa</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span class="visually-hidden" data-i18n="menu">Menu</span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" aria-current="page" data-i18n="home">Home</a></li>
+        <li><a href="#menu" data-i18n="coffee">Menu</a></li>
+        <li><a href="#branches" data-i18n="branches">Branches</a></li>
+        <li><a href="#about" data-i18n="about">About</a></li>
+        <li><a href="#contact" data-i18n="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" type="button" lang="ar" data-i18n-switch>العربية</button>
+        <a class="nav-cta" href="#order" data-i18n="order">Order now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home" class="hero">
+    <h1 data-i18n="title">Specialty coffee, roasted in Cairo</h1>
+    <p data-i18n="lead">Fresh beans every week, delivered to your door or ready at the nearest branch.</p>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --ink: #18202c;
+  --muted: #5d6878;
+  --line: #d9dee6;
+  --accent: #0f766e;
+  --accent-ink: #ffffff;
+  --accent-soft: #e2f4f1;
+  --error: #b42318;
+  --focus: #0f766e;
+  --radius: 12px;
+  --dot: 2rem;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-inline-size: 620px;
+  margin-inline: auto;
+  padding: 3rem 1.25rem;
+}
+
+h1 {
+  margin-block: 0 1.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.step[hidden] {
+  display: none;
+}
+
+.step {
+  animation: step-in 240ms ease-out;
+}
+
+.progress {
+  display: flex;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.progress-step {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.progress-step:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  inset-block-start: calc(var(--dot) / 2 - 1px);
+  inset-inline-end: calc(50% + var(--dot) / 2 + 4px);
+  inline-size: calc(100% - var(--dot) - 8px);
+  block-size: 2px;
+  background: var(--line);
+}
+
+.progress-dot {
+  transition: background-color 200ms, border-color 200ms, color 200ms;
+  display: grid;
+  place-items: center;
+  inline-size: var(--dot);
+  block-size: var(--dot);
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  font-weight: 600;
+}
+
+.progress-step[aria-current="step"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.progress-step[aria-current="step"] .progress-dot {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.progress-step.is-done .progress-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.progress-step.is-done + .progress-step::before {
+  background: var(--accent);
+}
+
+.stepper {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.step-title {
+  margin-block: 0 1.25rem;
+  font-size: 1.25rem;
+}
+
+.step-title:focus {
+  outline: none;
+}
+
+.field {
+  margin-block-end: 1.1rem;
+}
+
+.field > label,
+.group legend {
+  display: block;
+  margin-block-end: 0.35rem;
+  font-weight: 600;
+}
+
+.optional {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  inline-size: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+
+input:focus-visible,
+select:focus-visible {
+  outline-offset: 0;
+  border-color: var(--accent);
+}
+
+[aria-invalid="true"] {
+  border-color: var(--error);
+}
+
+.group {
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-block: 0.35rem;
+  cursor: pointer;
+}
+
+.choice input {
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.field-hint {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.field-error {
+  margin: 0.3rem 0 0;
+  color: var(--error);
+  font-size: 0.875rem;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.summary-block {
+  padding-block: 0.9rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.summary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 0.5rem;
+}
+
+.summary-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.summary dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1.25rem;
+  margin: 0;
+}
+
+.summary dt {
+  color: var(--muted);
+}
+
+.summary dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.link-btn {
+  padding: 0.25rem 0.5rem;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.done {
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: center;
+}
+
+.done h2 {
+  margin-block: 0 0.5rem;
+  color: var(--accent);
+}
+
+.done h2:focus {
+  outline: none;
+}
+
+.done-text {
+  margin-block: 0 1.25rem;
+  color: var(--muted);
+}
+
+.step-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-block-start: 1.5rem;
+  padding-block-start: 1.25rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.btn {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-back {
+  margin-inline-end: auto;
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn:hover {
+  filter: brightness(0.96);
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    padding-block: 2rem;
+  }
+
+  .stepper {
+    padding: 1.1rem;
+  }
+
+  .progress-label {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .summary dl {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .summary dd {
+    margin-block-end: 0.5rem;
+  }
+
+  .step-actions .btn {
+    flex: 1;
+  }
+
+  .btn-back {
+    margin-inline-end: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step {
+    animation: none;
+  }
+
+  .progress-dot {
+    transition: none;
+  }
+}

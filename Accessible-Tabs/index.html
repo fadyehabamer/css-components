@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessible Tabs</title>
+  <meta name="description" content="Tabs that follow the WAI-ARIA pattern: roving tabindex, arrow keys, Home and End, automatic or manual activation.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Trail Runner 2</h1>
+    <p class="intro">A light trail shoe for long days on rocky ground.</p>
+
+    <fieldset class="mode" id="activation">
+      <legend>Keyboard activation</legend>
+      <label><input type="radio" name="activation" value="auto" checked> Automatic <span class="mode-hint">arrow keys switch panels</span></label>
+      <label><input type="radio" name="activation" value="manual"> Manual <span class="mode-hint">arrows move focus, Enter or Space opens</span></label>
+    </fieldset>
+
+    <div class="tabs" id="product-tabs" data-activation="auto">
+      <ul class="tab-list" aria-label="Product details">
+        <li><a class="tab" id="tab-overview" href="#panel-overview">Overview</a></li>
+        <li><a class="tab" id="tab-specs" href="#panel-specs">Specs</a></li>
+        <li><a class="tab" id="tab-reviews" href="#panel-reviews">Reviews</a></li>
+        <li><a class="tab" id="tab-shipping" href="#panel-shipping">Shipping</a></li>
+      </ul>
+
+      <section class="tab-panel" id="panel-overview" aria-labelledby="tab-overview">
+        <h2>Overview</h2>
+        <p>The Trail Runner 2 keeps the grippy outsole of the first version and drops 40 grams. The upper is a single piece of knit mesh, so there are fewer seams to rub on long runs.</p>
+        <p>It works best on dry, rocky trails and mixed routes with some road in between.</p>
+      </section>
+
+      <section class="tab-panel" id="panel-specs" aria-labelledby="tab-specs">
+        <h2>Specs</h2>
+        <dl class="specs">
+          <dt>Weight</dt>
+          <dd>265 g (men's 42)</dd>
+          <dt>Drop</dt>
+          <dd>6 mm</dd>
+          <dt>Lug depth</dt>
+          <dd>4 mm</dd>
+          <dt>Upper</dt>
+          <dd>Recycled knit mesh</dd>
+        </dl>
+      </section>
+
+      <section class="tab-panel" id="panel-reviews" aria-labelledby="tab-reviews">
+        <h2>Reviews</h2>
+        <blockquote>
+          <p>Ran a 30 km race in them straight out of the box. No blisters.</p>
+          <footer>Mona, Cairo</footer>
+        </blockquote>
+        <blockquote>
+          <p>Great grip on rock, a bit narrow in the toe box for me.</p>
+          <footer>Karim, Amman</footer>
+        </blockquote>
+      </section>
+
+      <section class="tab-panel" id="panel-shipping" aria-labelledby="tab-shipping">
+        <h2>Shipping</h2>
+        <p>Orders ship within two working days. Returns are free for 30 days as long as the shoes haven't been worn outside.</p>
+        <p><a href="#product-tabs">Read the full returns policy</a></p>
+      </section>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --ink: #1d2330;
+  --muted: #667085;
+  --line: #e3e6ec;
+  --accent: #4f46e5;
+  --accent-soft: #eef0ff;
+  --highlight: #ffe58a;
+  --focus: #4f46e5;
+  --backdrop: rgb(15 18 30 / 0.45);
+  --radius: 12px;
+  --speed: 160ms;
+  --shadow: 0 24px 60px rgb(15 18 30 / 0.25);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --bg: #111318;
+  --surface: #1b1e26;
+  --ink: #e8eaf0;
+  --muted: #9aa1b2;
+  --line: #2c313d;
+  --accent: #8b85ff;
+  --accent-soft: #272a45;
+  --highlight: #6b5a12;
+  --focus: #8b85ff;
+  --backdrop: rgb(0 0 0 / 0.6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.1em 0.45em;
+  border: 1px solid var(--line);
+  border-block-end-width: 2px;
+  border-radius: 5px;
+  background: var(--surface);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.8em;
+}
+
+.page {
+  max-inline-size: 640px;
+  margin-inline: auto;
+  padding: 4rem 1.25rem;
+}
+
+.page h1 {
+  margin-block: 0 0.5rem;
+}
+
+.page p {
+  color: var(--muted);
+}
+
+.open-palette {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  inline-size: 100%;
+  max-inline-size: 360px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.open-palette:hover {
+  border-color: var(--accent);
+}
+
+.last-run {
+  min-block-size: 1.5em;
+}
+
+.palette {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  padding: 12vh 1rem 1rem;
+}
+
+.palette[hidden] {
+  display: none;
+}
+
+.palette-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--backdrop);
+  animation: fade-in var(--speed) ease-out;
+}
+
+.palette-panel {
+  position: relative;
+  inline-size: min(560px, 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: panel-in var(--speed) ease-out;
+}
+
+.palette-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-block-end: 1px solid var(--line);
+}
+
+.palette-input {
+  flex: 1;
+  min-inline-size: 0;
+  padding: 0.65rem 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+}
+
+.palette-input:focus-visible {
+  outline-offset: -2px;
+}
+
+.palette-close {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.palette-list {
+  max-block-size: min(360px, 55vh);
+  margin: 0;
+  padding: 0.4rem;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.palette-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.palette-option[aria-selected="true"] {
+  background: var(--accent-soft);
+}
+
+.palette-option[aria-selected="true"]::before {
+  content: "";
+  position: absolute;
+  inset-block: 0.4rem;
+  inset-inline-start: 0;
+  inline-size: 3px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.palette-option mark {
+  background: var(--highlight);
+  color: inherit;
+  border-radius: 2px;
+}
+
+.option-group {
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.palette-empty {
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.palette-hints {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+  border-block-start: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@media (max-width: 480px) {
+  .palette {
+    padding-block-start: 1rem;
+    padding-inline: 0.5rem;
+  }
+
+  .palette-list {
+    max-block-size: 60vh;
+  }
+
+  .option-group {
+    display: none;
+  }
+
+  .palette-hints {
+    display: none;
+  }
+
+  .page {
+    padding-block: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palette-backdrop,
+  .palette-panel {
+    animation: none;
+  }
+}
