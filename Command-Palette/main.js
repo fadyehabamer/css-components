@@ -9,6 +9,8 @@ const lastRun = document.querySelector('.last-run');
 
 const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 let returnFocus = null;
+let results = [];
+let active = -1;
 
 const commands = [
   { title: 'Toggle dark theme', group: 'Appearance', run: () => {
@@ -86,14 +88,16 @@ function filter(query) {
     .sort((a, b) => b.match.score - a.match.score || a.order - b.order);
 }
 
-function render(results) {
+function render(nextResults) {
+  results = nextResults;
   list.replaceChildren();
-  results.forEach(({ command, match }) => {
+  results.forEach(({ command, match }, index) => {
     const option = document.createElement('li');
     option.className = 'palette-option';
     option.id = 'command-' + commands.indexOf(command);
     option.setAttribute('role', 'option');
     option.setAttribute('aria-selected', 'false');
+    option.dataset.index = String(index);
 
     const title = document.createElement('span');
     title.className = 'option-title';
@@ -107,6 +111,33 @@ function render(results) {
     list.append(option);
   });
   empty.hidden = results.length > 0;
+  setActive(results.length ? 0 : -1);
+}
+
+function setActive(index) {
+  const options = list.children;
+  if (options[active]) options[active].setAttribute('aria-selected', 'false');
+  active = index;
+  if (options[active]) {
+    options[active].setAttribute('aria-selected', 'true');
+    input.setAttribute('aria-activedescendant', options[active].id);
+    if (options[active].scrollIntoView) options[active].scrollIntoView({ block: 'nearest' });
+  } else {
+    input.removeAttribute('aria-activedescendant');
+  }
+}
+
+function move(step) {
+  if (!results.length) return;
+  setActive((active + step + results.length) % results.length);
+}
+
+function runActive() {
+  const item = results[active];
+  if (!item) return;
+  closePalette();
+  if (item.command.run) item.command.run();
+  lastRun.textContent = 'Ran: ' + item.command.title;
 }
 
 function openPalette() {
@@ -127,6 +158,37 @@ function closePalette() {
 }
 
 input.addEventListener('input', () => render(filter(input.value)));
+
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowDown') {
+    event.preventDefault();
+    move(1);
+  } else if (event.key === 'ArrowUp') {
+    event.preventDefault();
+    move(-1);
+  } else if (event.key === 'Home' && event.ctrlKey) {
+    event.preventDefault();
+    setActive(results.length ? 0 : -1);
+  } else if (event.key === 'End' && event.ctrlKey) {
+    event.preventDefault();
+    setActive(results.length - 1);
+  } else if (event.key === 'Enter') {
+    event.preventDefault();
+    runActive();
+  }
+});
+
+list.addEventListener('mousemove', (event) => {
+  const option = event.target.closest('.palette-option');
+  if (option && Number(option.dataset.index) !== active) setActive(Number(option.dataset.index));
+});
+
+list.addEventListener('click', (event) => {
+  const option = event.target.closest('.palette-option');
+  if (!option) return;
+  setActive(Number(option.dataset.index));
+  runActive();
+});
 
 openButton.querySelector('.shortcut').textContent = isMac ? '⌘ K' : 'Ctrl K';
 openButton.addEventListener('click', openPalette);
