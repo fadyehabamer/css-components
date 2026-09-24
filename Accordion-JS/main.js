@@ -8,6 +8,12 @@ openAccordion = () => {
             })
             accordion.classList.add('active')
         }
+        accordion.querySelector('.accordion-heading').onkeydown = (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                accordion.onclick()
+            }
+        }
     })
 }
 openAccordion()
