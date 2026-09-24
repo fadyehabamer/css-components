@@ -43,13 +43,16 @@ function initTabs(root) {
     if (current === -1) return;
 
     const last = tabs.length - 1;
+    const rtl = getComputedStyle(list).direction === 'rtl';
+    const forward = rtl ? 'ArrowLeft' : 'ArrowRight';
+    const backward = rtl ? 'ArrowRight' : 'ArrowLeft';
     let next = null;
 
     switch (event.key) {
-      case 'ArrowRight':
+      case forward:
         next = current === last ? 0 : current + 1;
         break;
-      case 'ArrowLeft':
+      case backward:
         next = current === 0 ? last : current - 1;
         break;
       case 'Home':
@@ -69,6 +72,7 @@ function initTabs(root) {
 
     event.preventDefault();
     tabs[next].focus();
+    if (tabs[next].scrollIntoView) tabs[next].scrollIntoView({ block: 'nearest', inline: 'nearest' });
     if (root.dataset.activation === 'manual') rove(next);
     else select(next);
   });
