@@ -12,7 +12,13 @@
     <h1>Trail Runner 2</h1>
     <p class="intro">A light trail shoe for long days on rocky ground.</p>
 
-    <div class="tabs" id="product-tabs">
+    <fieldset class="mode" id="activation">
+      <legend>Keyboard activation</legend>
+      <label><input type="radio" name="activation" value="auto" checked> Automatic <span class="mode-hint">arrow keys switch panels</span></label>
+      <label><input type="radio" name="activation" value="manual"> Manual <span class="mode-hint">arrows move focus, Enter or Space opens</span></label>
+    </fieldset>
+
+    <div class="tabs" id="product-tabs" data-activation="auto">
       <ul class="tab-list" aria-label="Product details">
         <li><a class="tab" id="tab-overview" href="#panel-overview">Overview</a></li>
         <li><a class="tab" id="tab-specs" href="#panel-specs">Specs</a></li>

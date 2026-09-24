@@ -13,13 +13,22 @@ function initTabs(root) {
     panels[i].tabIndex = 0;
   });
 
+  let selectedIndex = 0;
+
+  function rove(index) {
+    tabs.forEach((tab, i) => {
+      tab.tabIndex = i === index ? 0 : -1;
+    });
+  }
+
   function select(index) {
+    selectedIndex = index;
     tabs.forEach((tab, i) => {
       const selected = i === index;
       tab.setAttribute('aria-selected', String(selected));
-      tab.tabIndex = selected ? 0 : -1;
       panels[i].hidden = !selected;
     });
+    rove(index);
   }
 
   list.addEventListener('click', (event) => {
@@ -50,6 +59,7 @@ function initTabs(root) {
         next = last;
         break;
       case ' ':
+      case 'Enter':
         event.preventDefault();
         select(current);
         return;
@@ -59,7 +69,12 @@ function initTabs(root) {
 
     event.preventDefault();
     tabs[next].focus();
-    select(next);
+    if (root.dataset.activation === 'manual') rove(next);
+    else select(next);
+  });
+
+  list.addEventListener('focusout', (event) => {
+    if (!list.contains(event.relatedTarget)) rove(selectedIndex);
   });
 
   const fromHash = panels.findIndex((panel) => '#' + panel.id === location.hash);
@@ -67,3 +82,10 @@ function initTabs(root) {
 }
 
 document.querySelectorAll('.tabs').forEach(initTabs);
+
+const modeControl = document.getElementById('activation');
+const productTabs = document.getElementById('product-tabs');
+
+modeControl.addEventListener('change', () => {
+  productTabs.dataset.activation = modeControl.querySelector('input:checked').value;
+});
